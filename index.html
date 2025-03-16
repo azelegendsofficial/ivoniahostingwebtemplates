@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+    <head>
+        <meta charSet="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="preload" href="/_next/static/media/a34f9d1faa5f3315-s.p.woff2" as="font" crossorigin="" type="font/woff2"/>
+        <link rel="stylesheet" href="/_next/static/css/c4e27da937809267.css" data-precedence="next"/>
+        <link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-d4d8f642dac0314f.js"/>
+        <script src="/_next/static/chunks/4bd1b696-1f22bef4cd69495e.js" async=""></script>
+        <script src="/_next/static/chunks/517-8340ff0ab58e4c81.js" async=""></script>
+        <script src="/_next/static/chunks/main-app-a849309caff0f7ba.js" async=""></script>
+        <script src="/_next/static/chunks/app/layout-d7e99bffda0ebf0e.js" async=""></script>
+        <script src="/_next/static/chunks/782-71ab0504a042fecb.js" async=""></script>
+        <script src="/_next/static/chunks/217-9aceb0ed4172c62f.js" async=""></script>
+        <script src="/_next/static/chunks/702-78241cd204d38619.js" async=""></script>
+        <script src="/_next/static/chunks/app/page-a93402034904a566.js" async=""></script>
+        <meta name="next-size-adjust" content=""/>
+        <title>Ivonia Hosting</title>
+        <meta name="description" content="Modern Hosting Template"/>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16"/>
+        <script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script>
+    </head>
+    <body class="__className_d65c78">
+        <script>
+            ( (e, t, r, n, o, a, i, u) => {
+                let s = document.documentElement
+                  , l = ["light", "dark"];
+                function c(t) {
+                    (Array.isArray(e) ? e : [e]).forEach(e => {
+                        let r = "class" === e
+                          , n = r && a ? o.map(e => a[e] || e) : o;
+                        r ? (s.classList.remove(...n),
+                        s.classList.add(t)) : s.setAttribute(e, t)
+                    }
+                    ),
+                    u && l.includes(t) && (s.style.colorScheme = t)
+                }
+                if (n)
+                    c(n);
+                else
+                    try {
+                        let e = localStorage.getItem(t) || r
+                          , n = i && "system" === e ? window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light" : e;
+                        c(n)
+                    } catch (e) {}
+            }
+            )("class", "theme", "dark", null, ["light", "dark"], null, true, true)
+        </script>
+        <div class="fixed inset-0 z-50 flex items-center justify-center bg-zinc-950 transition-opacity duration-500 opacity-100">
+            <div class="h-16 w-16 animate-spin rounded-full border-t-4 border-blue-500"></div>
+        </div>
+        <div class="transition-all duration-500 opacity-0 blur-md">
+            <div class="h-screen bg-zinc-950 bg-gradient-to-b from-background via-background/95 to-background/90 overflow-y-scroll overflow-x-hidden">
+                <div class="relative">
+                    <header class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-background/80 backdrop-blur-xl backdrop-saturate-150" style="opacity:0;transform:translateY(-20px)">
+                        <div class="pl-20 pr-20 flex h-16 items-center justify-between">
+                            <div class="flex items-center gap-8">
+                                <a class="relative font-bold text-xl" href="/">
+                                    <span class="bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">Acme</span>
+                                    <span class="absolute -bottom-1 left-0 h-px w-full bg-gradient-to-r from-white/50 to-transparent"></span>
+                                </a>
+                                <nav class="hidden md:flex items-center gap-6">
+                                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-9 px-4 py-2 hover:bg-white/10 hover:text-white transition-colors rounded">Products</button>
+                                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-9 px-4 py-2 hover:bg-white/10 hover:text-white transition-colors rounded">Pricing</button>
+                                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-9 px-4 py-2 hover:bg-white/10 hover:text-white transition-colors rounded">Support</button>
+                                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-9 px-4 py-2 hover:bg-white/10 hover:text-white transition-colors rounded">About</button>
+                                </nav>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <button class="items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:text-accent-foreground h-9 px-4 py-2 hidden md:inline-flex hover:bg-white/10">Log in</button>
+                                <button class="items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow hover:bg-primary/90 h-9 px-4 py-2 rounded hidden md:inline-flex bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white border-0">Start for free</button>
+                                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 w-9 md:hidden">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu h-5 w-5">
+                                        <line x1="4" x2="20" y1="12" y2="12"></line>
+                                        <line x1="4" x2="20" y1="6" y2="6"></line>
+                                        <line x1="4" x2="20" y1="18" y2="18"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="relative min-h-screen">
+                        <div class="absolute w-full h-screen flex items-center justify-center pointer-events-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-server absolute text-white/50 animate-float" style="top:60.9156400127146%;left:42.5895083686855%;animation-delay:3.277759536592313s">
+                                <rect width="20" height="8" x="2" y="2" rx="2" ry="2"></rect>
+                                <rect width="20" height="8" x="2" y="14" rx="2" ry="2"></rect>
+                                <line x1="6" x2="6.01" y1="6" y2="6"></line>
+                                <line x1="6" x2="6.01" y1="18" y2="18"></line>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud absolute text-white/50 animate-float" style="top:19.903067873786167%;left:65.5101677746359%;animation-delay:0.2594665094201676s">
+                                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database absolute text-white/50 animate-float" style="top:21.178799306486535%;left:59.23304163753343%;animation-delay:4.27350362916647s">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
+                                <path d="M3 12A9 3 0 0 0 21 12"></path>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cpu absolute text-white/50 animate-float" style="top:22.048592787369266%;left:24.080682676559196%;animation-delay:0.49498975313090887s">
+                                <rect width="16" height="16" x="4" y="4" rx="2"></rect>
+                                <rect width="6" height="6" x="9" y="9" rx="1"></rect>
+                                <path d="M15 2v2"></path>
+                                <path d="M15 20v2"></path>
+                                <path d="M2 15h2"></path>
+                                <path d="M2 9h2"></path>
+                                <path d="M20 15h2"></path>
+                                <path d="M20 9h2"></path>
+                                <path d="M9 2v2"></path>
+                                <path d="M9 20v2"></path>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hard-drive absolute text-white/50 animate-float" style="top:48.67458278045364%;left:2.6797745727413114%;animation-delay:1.010125048254552s">
+                                <line x1="22" x2="2" y1="12" y2="12"></line>
+                                <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
+                                <line x1="6" x2="6.01" y1="16" y2="16"></line>
+                                <line x1="10" x2="10.01" y1="16" y2="16"></line>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wifi absolute text-white/50 animate-float" style="top:53.881775313260874%;left:26.23503386808373%;animation-delay:1.2458311433074742s">
+                                <path d="M12 20h.01"></path>
+                                <path d="M2 8.82a15 15 0 0 1 20 0"></path>
+                                <path d="M5 12.859a10 10 0 0 1 14 0"></path>
+                                <path d="M8.5 16.429a5 5 0 0 1 7 0"></path>
+                            </svg>
+                        </div>
+                        <main class="pt-20 text-center flex flex-col items-center justify-center relative min-h-screen">
+                            <div class="absolute top-20 -left-20 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+                            <div class="absolute top-20 -right-20 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+                            <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm backdrop-blur-3xl" style="opacity:0;filter:blur(10px);transform:translateY(-20px)">
+                                <span class="text-blue-400">New!</span>
+                                <span>Introducing our latest server technology 🚀</span>
+                                <span class="ml-2 opacity-60">→</span>
+                            </div>
+                            <h1 class="mt-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-b from-white to-white/80 bg-clip-text text-transparent" style="opacity:0;filter:blur(10px);transform:translateY(-20px)">
+                                Next-Gen Server<br/>Hosting Solutions
+                            </h1>
+                            <p class="mt-6 text-lg sm:text-xl text-white/60" style="opacity:0;filter:blur(10px);transform:translateY(20px)">
+                                Powerful, scalable, and secure hosting<br class="hidden sm:inline"/>tailored for your business needs.
+                            </p>
+                            <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4" style="opacity:0;filter:blur(10px);transform:translateY(20px)">
+                                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow hover:bg-primary/90 h-10 px-8 w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white border-0 rounded">Get started</button>
+                                <a href="#pricing">
+                                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-secondary-foreground shadow-sm h-10 px-8 w-full sm:w-auto bg-white/5 hover:bg-white/10 backdrop-blur-3xl border-white/10 rounded">View plans</button>
+                                </a>
+                            </div>
+                            <div class="flex flex-wrap justify-center gap-4 sm:gap-8 mt-16" style="opacity:0;transform:translateY(20px)">
+                                <button class="flex items-center gap-2 text-white/60 hover:text-white
+           transition-colors relative group text-sm sm:text-base">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-server h-4 w-4 sm:h-5 sm:w-5">
+                                        <rect width="20" height="8" x="2" y="2" rx="2" ry="2"></rect>
+                                        <rect width="20" height="8" x="2" y="14" rx="2" ry="2"></rect>
+                                        <line x1="6" x2="6.01" y1="6" y2="6"></line>
+                                        <line x1="6" x2="6.01" y1="18" y2="18"></line>
+                                    </svg>
+                                    Dedicated Servers<span class="absolute -bottom-1 left-0 h-px w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all group-hover:w-full"></span>
+                                </button>
+                                <button class="flex items-center gap-2 text-white/60 hover:text-white
+           transition-colors relative group text-sm sm:text-base">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud h-4 w-4 sm:h-5 sm:w-5">
+                                        <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                                    </svg>
+                                    Cloud Hosting<span class="absolute -bottom-1 left-0 h-px w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all group-hover:w-full"></span>
+                                </button>
+                                <button class="flex items-center gap-2 text-white/60 hover:text-white
+           transition-colors relative group text-sm sm:text-base">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield h-4 w-4 sm:h-5 sm:w-5">
+                                        <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                                    </svg>
+                                    Advanced Security<span class="absolute -bottom-1 left-0 h-px w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all group-hover:w-full"></span>
+                                </button>
+                                <button class="flex items-center gap-2 text-white/60 hover:text-white
+           transition-colors relative group text-sm sm:text-base">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap h-4 w-4 sm:h-5 sm:w-5">
+                                        <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
+                                    </svg>
+                                    High Performance<span class="absolute -bottom-1 left-0 h-px w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all group-hover:w-full"></span>
+                                </button>
+                                <button class="flex items-center gap-2 text-white/60 hover:text-white
+           transition-colors relative group text-sm sm:text-base">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-headphones h-4 w-4 sm:h-5 sm:w-5">
+                                        <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path>
+                                    </svg>
+                                    24/7 Support<span class="absolute -bottom-1 left-0 h-px w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all group-hover:w-full"></span>
+                                </button>
+                            </div>
+                        </main>
+                    </div>
+                    <section id="features" class="py-16 bg-zinc-950">
+                        <div class="max-w-screen-xl mx-auto space-y-16 px-4">
+                            <div class="text-center space-y-4">
+                                <h2 class="text-2xl font-semibold text-zinc-200">Why Choose Us</h2>
+                                <h1 class="text-4xl md:text-5xl font-bold text-white">Premium Game Hosting Experience</h1>
+                                <p class="text-zinc-400 max-w-2xl mx-auto">Experience the difference with our cutting-edge infrastructure and premium features designed for serious gamers and game server hosts.</p>
+                            </div>
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <div class="rounded-xl border text-card-foreground shadow bg-zinc-900/50 relative overflow-hidden transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg border-transparent" style="--card-color:#f97316">
+                                    <div class="flex flex-col space-y-1.5 p-6">
+                                        <div style="background-color:#f973161a" class="w-12 h-12 rounded flex items-center justify-center mb-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap w-6 h-6" style="color:#f97316">
+                                                <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="font-semibold leading-none tracking-tight text-zinc-50">Lightning Fast Performance</div>
+                                    </div>
+                                    <div class="p-6 pt-0">
+                                        <p class="text-zinc-400 mb-6">Experience unparalleled speed with our NVMe SSD storage and high-performance AMD EPYC processors, ensuring smooth gameplay for all your favorite titles.</p>
+                                        <div class="grid grid-cols-3 gap-4 text-sm">
+                                            <div>
+                                                <p class="text-zinc-400">Server Uptime</p>
+                                                <p class="text-zinc-50 font-semibold">99.9%</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-zinc-400">Avg. Latency</p>
+                                                <p class="text-zinc-50 font-semibold">&lt;20ms</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-zinc-400">CPU Boost</p>
+                                                <p class="text-zinc-50 font-semibold">3.9GHz</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="absolute inset-0  opacity-0 transition-all duration-1000 ease-in-out
+                  " style="border-color:#f97316;clip-path:inset(100%);transition:clip-path 0.6s ease-in-out, opacity 0.6s ease-in-out"></div>
+                                    <div class="absolute inset-0 opacity-0 filter blur-xl transition-opacity duration-1000 ease-in-out
+                  " style="background-color:#f97316"></div>
+                                </div>
+                                <div class="rounded-xl border text-card-foreground shadow bg-zinc-900/50 relative overflow-hidden transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg border-transparent" style="--card-color:#3b82f6">
+                                    <div class="flex flex-col space-y-1.5 p-6">
+                                        <div style="background-color:#3b82f61a" class="w-12 h-12 rounded flex items-center justify-center mb-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield w-6 h-6" style="color:#3b82f6">
+                                                <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="font-semibold leading-none tracking-tight text-zinc-50">DDoS Protection</div>
+                                    </div>
+                                    <div class="p-6 pt-0">
+                                        <p class="text-zinc-400 mb-6">Keep your game servers safe with our enterprise-grade DDoS protection, featuring automatic mitigation and real-time threat monitoring.</p>
+                                        <div class="grid grid-cols-3 gap-4 text-sm">
+                                            <div>
+                                                <p class="text-zinc-400">Max Protection</p>
+                                                <p class="text-zinc-50 font-semibold">1Tbps+</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-zinc-400">Mitigation Time</p>
+                                                <p class="text-zinc-50 font-semibold">&lt;10s</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-zinc-400">Threat Monitor</p>
+                                                <p class="text-zinc-50 font-semibold">24/7</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="absolute inset-0  opacity-0 transition-all duration-1000 ease-in-out
+                  " style="border-color:#3b82f6;clip-path:inset(100%);transition:clip-path 0.6s ease-in-out, opacity 0.6s ease-in-out"></div>
+                                    <div class="absolute inset-0 opacity-0 filter blur-xl transition-opacity duration-1000 ease-in-out
+                  " style="background-color:#3b82f6"></div>
+                                </div>
+                                <div class="rounded-xl border text-card-foreground shadow bg-zinc-900/50 relative overflow-hidden transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg border-transparent" style="--card-color:#10b981">
+                                    <div class="flex flex-col space-y-1.5 p-6">
+                                        <div style="background-color:#10b9811a" class="w-12 h-12 rounded flex items-center justify-center mb-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock w-6 h-6" style="color:#10b981">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <polyline points="12 6 12 12 16 14"></polyline>
+                                            </svg>
+                                        </div>
+                                        <div class="font-semibold leading-none tracking-tight text-zinc-50">Instant Setup</div>
+                                    </div>
+                                    <div class="p-6 pt-0">
+                                        <p class="text-zinc-400 mb-6">Get your game server up and running in seconds with our automated deployment system and one-click game installers for popular titles.</p>
+                                        <div class="grid grid-cols-3 gap-4 text-sm">
+                                            <div>
+                                                <p class="text-zinc-400">Deployment</p>
+                                                <p class="text-zinc-50 font-semibold">&lt;30s</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-zinc-400">Game Install</p>
+                                                <p class="text-zinc-50 font-semibold">1-Click</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-zinc-400">Config Wizard</p>
+                                                <p class="text-zinc-50 font-semibold">Yes</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="absolute inset-0  opacity-0 transition-all duration-1000 ease-in-out
+                  " style="border-color:#10b981;clip-path:inset(100%);transition:clip-path 0.6s ease-in-out, opacity 0.6s ease-in-out"></div>
+                                    <div class="absolute inset-0 opacity-0 filter blur-xl transition-opacity duration-1000 ease-in-out
+                  " style="background-color:#10b981"></div>
+                                </div>
+                                <div class="rounded-xl border text-card-foreground shadow bg-zinc-900/50 relative overflow-hidden transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg border-transparent" style="--card-color:#8b5cf6">
+                                    <div class="flex flex-col space-y-1.5 p-6">
+                                        <div style="background-color:#8b5cf61a" class="w-12 h-12 rounded flex items-center justify-center mb-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-server w-6 h-6" style="color:#8b5cf6">
+                                                <rect width="20" height="8" x="2" y="2" rx="2" ry="2"></rect>
+                                                <rect width="20" height="8" x="2" y="14" rx="2" ry="2"></rect>
+                                                <line x1="6" x2="6.01" y1="6" y2="6"></line>
+                                                <line x1="6" x2="6.01" y1="18" y2="18"></line>
+                                            </svg>
+                                        </div>
+                                        <div class="font-semibold leading-none tracking-tight text-zinc-50">Premium Hardware</div>
+                                    </div>
+                                    <div class="p-6 pt-0">
+                                        <p class="text-zinc-400 mb-6">Enjoy top-tier hardware with dedicated resources for your game servers. No overselling, just pure performance for an optimal gaming experience.</p>
+                                        <div class="grid grid-cols-3 gap-4 text-sm">
+                                            <div>
+                                                <p class="text-zinc-400">RAM/Core</p>
+                                                <p class="text-zinc-50 font-semibold">Up to 8GB</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-zinc-400">NVMe Storage</p>
+                                                <p class="text-zinc-50 font-semibold">100GB+</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-zinc-400">CPU Priority</p>
+                                                <p class="text-zinc-50 font-semibold">High</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="absolute inset-0  opacity-0 transition-all duration-1000 ease-in-out
+                  " style="border-color:#8b5cf6;clip-path:inset(100%);transition:clip-path 0.6s ease-in-out, opacity 0.6s ease-in-out"></div>
+                                    <div class="absolute inset-0 opacity-0 filter blur-xl transition-opacity duration-1000 ease-in-out
+                  " style="background-color:#8b5cf6"></div>
+                                </div>
+                                <div class="rounded-xl border text-card-foreground shadow bg-zinc-900/50 relative overflow-hidden transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg border-transparent" style="--card-color:#ef4444">
+                                    <div class="flex flex-col space-y-1.5 p-6">
+                                        <div style="background-color:#ef44441a" class="w-12 h-12 rounded flex items-center justify-center mb-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe w-6 h-6" style="color:#ef4444">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                                                <path d="M2 12h20"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="font-semibold leading-none tracking-tight text-zinc-50">Global Network</div>
+                                    </div>
+                                    <div class="p-6 pt-0">
+                                        <p class="text-zinc-400 mb-6">Choose from multiple locations worldwide to ensure low latency for your players. Host your game close to your player base for the best performance.</p>
+                                        <div class="grid grid-cols-3 gap-4 text-sm">
+                                            <div>
+                                                <p class="text-zinc-400">Data Centers</p>
+                                                <p class="text-zinc-50 font-semibold">10+</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-zinc-400">Network Speed</p>
+                                                <p class="text-zinc-50 font-semibold">40Gbps</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-zinc-400">Avg. Ping</p>
+                                                <p class="text-zinc-50 font-semibold">&lt;50ms</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="absolute inset-0  opacity-0 transition-all duration-1000 ease-in-out
+                  " style="border-color:#ef4444;clip-path:inset(100%);transition:clip-path 0.6s ease-in-out, opacity 0.6s ease-in-out"></div>
+                                    <div class="absolute inset-0 opacity-0 filter blur-xl transition-opacity duration-1000 ease-in-out
+                  " style="background-color:#ef4444"></div>
+                                </div>
+                                <div class="rounded-xl border text-card-foreground shadow bg-zinc-900/50 relative overflow-hidden transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg border-transparent" style="--card-color:#14b8a6">
+                                    <div class="flex flex-col space-y-1.5 p-6">
+                                        <div style="background-color:#14b8a61a" class="w-12 h-12 rounded flex items-center justify-center mb-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dollar-sign w-6 h-6" style="color:#14b8a6">
+                                                <line x1="12" x2="12" y1="2" y2="22"></line>
+                                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="font-semibold leading-none tracking-tight text-zinc-50">Fair Pricing</div>
+                                    </div>
+                                    <div class="p-6 pt-0">
+                                        <p class="text-zinc-400 mb-6">Enjoy transparent pricing with no hidden fees. Our flexible plans allow you to pay only for what you need and scale as your gaming community grows.</p>
+                                        <div class="grid grid-cols-3 gap-4 text-sm">
+                                            <div>
+                                                <p class="text-zinc-400">Starting Price</p>
+                                                <p class="text-zinc-50 font-semibold">$2.99/mo</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-zinc-400">Free Trial</p>
+                                                <p class="text-zinc-50 font-semibold">7 Days</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-zinc-400">Scaling</p>
+                                                <p class="text-zinc-50 font-semibold">On-Demand</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="absolute inset-0  opacity-0 transition-all duration-1000 ease-in-out
+                  " style="border-color:#14b8a6;clip-path:inset(100%);transition:clip-path 0.6s ease-in-out, opacity 0.6s ease-in-out"></div>
+                                    <div class="absolute inset-0 opacity-0 filter blur-xl transition-opacity duration-1000 ease-in-out
+                  " style="background-color:#14b8a6"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="min-h-screen bg-zinc-950 text-zinc-50 py-16 px-4">
+                        <div class="max-w-screen-xl mx-auto space-y-12">
+                            <div class="text-center space-y-4">
+                                <h1 class="text-4xl md:text-5xl font-bold">Global Server Network</h1>
+                                <p class="text-zinc-400 max-w-2xl mx-auto">Experience lightning-fast gameplay with our strategically placed servers, ensuring minimal latency for gamers worldwide.</p>
+                            </div>
+                            <div dir="ltr" data-orientation="horizontal" class="w-full">
+                                <div role="tablist" aria-orientation="horizontal" class="inline-flex h-9 items-center justify-center rounded-lg p-1 text-muted-foreground bg-zinc-900/50 border-zinc-800" tabindex="-1" data-orientation="horizontal" style="outline:none">
+                                    <button type="button" role="tab" aria-selected="true" aria-controls="radix-:Rkjtb:-content-all" data-state="active" id="radix-:Rkjtb:-trigger-all" class="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">All Regions</button>
+                                    <button type="button" role="tab" aria-selected="false" aria-controls="radix-:Rkjtb:-content-na" data-state="inactive" id="radix-:Rkjtb:-trigger-na" class="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">North America</button>
+                                    <button type="button" role="tab" aria-selected="false" aria-controls="radix-:Rkjtb:-content-eu" data-state="inactive" id="radix-:Rkjtb:-trigger-eu" class="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">Europe</button>
+                                    <button type="button" role="tab" aria-selected="false" aria-controls="radix-:Rkjtb:-content-asia" data-state="inactive" id="radix-:Rkjtb:-trigger-asia" class="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">Asia</button>
+                                    <button type="button" role="tab" aria-selected="false" aria-controls="radix-:Rkjtb:-content-oceania" data-state="inactive" id="radix-:Rkjtb:-trigger-oceania" class="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">Oceania</button>
+                                    <button type="button" role="tab" aria-selected="false" aria-controls="radix-:Rkjtb:-content-sa" data-state="inactive" id="radix-:Rkjtb:-trigger-sa" class="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">South America</button>
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                <div class="rounded-xl border text-card-foreground shadow bg-zinc-900/50 hover:border-zinc-700 border-zinc-800 transition duration-300">
+                                    <div class="p-6">
+                                        <div class="flex justify-between items-start mb-4">
+                                            <div>
+                                                <div class="flex items-center gap-2">
+                                                    <span class="fi fi-us rounded-sm"></span>
+                                                    <h3 class="text-lg font-semibold text-zinc-50">New York</h3>
+                                                </div>
+                                                <p class="text-sm text-zinc-400">North America East</p>
+                                            </div>
+                                            <span class="text-xs text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded-full">Available</span>
+                                        </div>
+                                        <div class="space-y-2 text-sm">
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Latency:</span>
+                                                <span class="text-zinc-50">&lt;8ms</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Servers:</span>
+                                                <span class="text-zinc-50">1200+</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Uptime:</span>
+                                                <span class="text-zinc-50">99.999%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rounded-xl border text-card-foreground shadow bg-zinc-900/50 hover:border-zinc-700 border-zinc-800 transition duration-300">
+                                    <div class="p-6">
+                                        <div class="flex justify-between items-start mb-4">
+                                            <div>
+                                                <div class="flex items-center gap-2">
+                                                    <span class="fi fi-us rounded-sm"></span>
+                                                    <h3 class="text-lg font-semibold text-zinc-50">Los Angeles</h3>
+                                                </div>
+                                                <p class="text-sm text-zinc-400">North America West</p>
+                                            </div>
+                                            <span class="text-xs text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded-full">Available</span>
+                                        </div>
+                                        <div class="space-y-2 text-sm">
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Latency:</span>
+                                                <span class="text-zinc-50">&lt;12ms</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Servers:</span>
+                                                <span class="text-zinc-50">900+</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Uptime:</span>
+                                                <span class="text-zinc-50">99.99%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rounded-xl border text-card-foreground shadow bg-zinc-900/50 hover:border-zinc-700 border-zinc-800 transition duration-300">
+                                    <div class="p-6">
+                                        <div class="flex justify-between items-start mb-4">
+                                            <div>
+                                                <div class="flex items-center gap-2">
+                                                    <span class="fi fi-gb rounded-sm"></span>
+                                                    <h3 class="text-lg font-semibold text-zinc-50">London</h3>
+                                                </div>
+                                                <p class="text-sm text-zinc-400">Europe West</p>
+                                            </div>
+                                            <span class="text-xs text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded-full">Available</span>
+                                        </div>
+                                        <div class="space-y-2 text-sm">
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Latency:</span>
+                                                <span class="text-zinc-50">&lt;10ms</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Servers:</span>
+                                                <span class="text-zinc-50">1400+</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Uptime:</span>
+                                                <span class="text-zinc-50">99.999%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rounded-xl border text-card-foreground shadow bg-zinc-900/50 hover:border-zinc-700 border-zinc-800 transition duration-300">
+                                    <div class="p-6">
+                                        <div class="flex justify-between items-start mb-4">
+                                            <div>
+                                                <div class="flex items-center gap-2">
+                                                    <span class="fi fi-de rounded-sm"></span>
+                                                    <h3 class="text-lg font-semibold text-zinc-50">Frankfurt</h3>
+                                                </div>
+                                                <p class="text-sm text-zinc-400">Europe Central</p>
+                                            </div>
+                                            <span class="text-xs text-orange-400 bg-orange-400/10 px-2 py-1 rounded-full">Out of Stock</span>
+                                        </div>
+                                        <div class="space-y-2 text-sm">
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Latency:</span>
+                                                <span class="text-zinc-50">&lt;9ms</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Servers:</span>
+                                                <span class="text-zinc-50">1600+</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Uptime:</span>
+                                                <span class="text-zinc-50">99.999%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rounded-xl border text-card-foreground shadow bg-zinc-900/50 hover:border-zinc-700 border-zinc-800 transition duration-300">
+                                    <div class="p-6">
+                                        <div class="flex justify-between items-start mb-4">
+                                            <div>
+                                                <div class="flex items-center gap-2">
+                                                    <span class="fi fi-sg rounded-sm"></span>
+                                                    <h3 class="text-lg font-semibold text-zinc-50">Singapore</h3>
+                                                </div>
+                                                <p class="text-sm text-zinc-400">Asia Southeast</p>
+                                            </div>
+                                            <span class="text-xs text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded-full">Available</span>
+                                        </div>
+                                        <div class="space-y-2 text-sm">
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Latency:</span>
+                                                <span class="text-zinc-50">&lt;14ms</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Servers:</span>
+                                                <span class="text-zinc-50">700+</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Uptime:</span>
+                                                <span class="text-zinc-50">99.99%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rounded-xl border text-card-foreground shadow bg-zinc-900/50 hover:border-zinc-700 border-zinc-800 transition duration-300">
+                                    <div class="p-6">
+                                        <div class="flex justify-between items-start mb-4">
+                                            <div>
+                                                <div class="flex items-center gap-2">
+                                                    <span class="fi fi-jp rounded-sm"></span>
+                                                    <h3 class="text-lg font-semibold text-zinc-50">Tokyo</h3>
+                                                </div>
+                                                <p class="text-sm text-zinc-400">Asia Northeast</p>
+                                            </div>
+                                            <span class="text-xs text-yellow-400 bg-yellow-400/10 px-2 py-1 rounded-full">Low Stock</span>
+                                        </div>
+                                        <div class="space-y-2 text-sm">
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Latency:</span>
+                                                <span class="text-zinc-50">&lt;11ms</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Servers:</span>
+                                                <span class="text-zinc-50">900+</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Uptime:</span>
+                                                <span class="text-zinc-50">99.99%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rounded-xl border text-card-foreground shadow bg-zinc-900/50 hover:border-zinc-700 border-zinc-800 transition duration-300">
+                                    <div class="p-6">
+                                        <div class="flex justify-between items-start mb-4">
+                                            <div>
+                                                <div class="flex items-center gap-2">
+                                                    <span class="fi fi-au rounded-sm"></span>
+                                                    <h3 class="text-lg font-semibold text-zinc-50">Sydney</h3>
+                                                </div>
+                                                <p class="text-sm text-zinc-400">Oceania</p>
+                                            </div>
+                                            <span class="text-xs text-red-400 bg-red-400/10 px-2 py-1 rounded-full">Unavailable</span>
+                                        </div>
+                                        <div class="space-y-2 text-sm">
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Latency:</span>
+                                                <span class="text-zinc-50">&lt;16ms</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Servers:</span>
+                                                <span class="text-zinc-50">500+</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Uptime:</span>
+                                                <span class="text-zinc-50">99.99%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rounded-xl border text-card-foreground shadow bg-zinc-900/50 hover:border-zinc-700 border-zinc-800 transition duration-300">
+                                    <div class="p-6">
+                                        <div class="flex justify-between items-start mb-4">
+                                            <div>
+                                                <div class="flex items-center gap-2">
+                                                    <span class="fi fi-br rounded-sm"></span>
+                                                    <h3 class="text-lg font-semibold text-zinc-50">São Paulo</h3>
+                                                </div>
+                                                <p class="text-sm text-zinc-400">South America</p>
+                                            </div>
+                                            <span class="text-xs text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded-full">Available</span>
+                                        </div>
+                                        <div class="space-y-2 text-sm">
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Latency:</span>
+                                                <span class="text-zinc-50">&lt;18ms</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Servers:</span>
+                                                <span class="text-zinc-50">400+</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-zinc-400">Uptime:</span>
+                                                <span class="text-zinc-50">99.99%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <section id="pricing" class="min-h-screen flex flex-col items-center gap-10 py-10">
+                        <div class="space-y-7 text-center">
+                            <div class="space-y-4">
+                                <h1 class="text-4xl font-medium md:text-5xl">Plans and Pricing</h1>
+                                <p>Receive unlimited credits when you pay yearly, and save on your plan.</p>
+                            </div>
+                        </div>
+                        <div class="grid w-full max-w-6xl gap-6 sm:grid-cols-2 xl:grid-cols-4">
+                            <div class="relative flex flex-col gap-8 overflow-hidden rounded-2xl border p-6 shadow bg-background text-foreground ">
+                                <h2 class="flex items-center justify-center flex-row gap-3 text-xl font-medium capitalize">Minecraft Hosting</h2>
+                                <div class="relative h-12">
+                                    <h1 class="text-4xl font-medium">Free</h1>
+                                </div>
+                                <div class="flex-1 space-y-2">
+                                    <h3 class="text-sm font-medium">Great for 
+                                    <!-- -->
+                                    minecraft hosting
+                                    <!-- -->
+                                    .</h3>
+                                    <ul class="space-y-2">
+                                        <li class="flex items-center gap-2 text-sm font-medium text-foreground/60">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check text-sm">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <!-- -->
+                                            Basic Minecraft server
+                                        </li>
+                                        <li class="flex items-center gap-2 text-sm font-medium text-foreground/60">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check text-sm">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <!-- -->
+                                            3-player slots
+                                        </li>
+                                        <li class="flex items-center gap-2 text-sm font-medium text-foreground/60">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check text-sm">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <!-- -->
+                                            512MB RAM
+                                        </li>
+                                        <li class="flex items-center gap-2 text-sm font-medium text-foreground/60">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check text-sm">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <!-- -->
+                                            1GB SSD
+                                        </li>
+                                        <li class="flex items-center gap-2 text-sm font-medium text-foreground/60">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check text-sm">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <!-- -->
+                                            Standard Support
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 h-9 px-4 py-2 group rounded z-50" type="button">
+                                    Get started
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right -me-1 ms-2 opacity-60 transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+                                        <path d="M5 12h14"></path>
+                                        <path d="m12 5 7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="relative flex flex-col gap-8 overflow-hidden rounded-2xl border p-6 shadow bg-background text-foreground outline outline-[rgba(120,119,198)]">
+                                <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.1),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+                                <h2 class="flex items-center justify-center flex-row gap-3 text-xl font-medium capitalize">
+                                    VPS Hosting<div class="inline-flex items-center rounded-md border text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent shadow mt-1 bg-orange-900 px-1 py-0 text-white hover:bg-orange-900">Most Popular</div>
+                                </h2>
+                                <div class="relative h-12">
+                                    <h1 class="text-4xl font-medium">$10</h1>
+                                </div>
+                                <div class="flex-1 space-y-2">
+                                    <h3 class="text-sm font-medium">Great for 
+                                    <!-- -->
+                                    vps hosting
+                                    <!-- -->
+                                    .</h3>
+                                    <ul class="space-y-2">
+                                        <li class="flex items-center gap-2 text-sm font-medium text-foreground/60">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check text-sm">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <!-- -->
+                                            1 vCPU
+                                        </li>
+                                        <li class="flex items-center gap-2 text-sm font-medium text-foreground/60">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check text-sm">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <!-- -->
+                                            2GB RAM
+                                        </li>
+                                        <li class="flex items-center gap-2 text-sm font-medium text-foreground/60">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check text-sm">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <!-- -->
+                                            50GB SSD
+                                        </li>
+                                        <li class="flex items-center gap-2 text-sm font-medium text-foreground/60">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check text-sm">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <!-- -->
+                                            Unlimited Bandwidth
+                                        </li>
+                                        <li class="flex items-center gap-2 text-sm font-medium text-foreground/60">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check text-sm">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <!-- -->
+                                            Full Root Access
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 h-9 px-4 py-2 group rounded z-50" type="button">
+                                    Get started
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right -me-1 ms-2 opacity-60 transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+                                        <path d="M5 12h14"></path>
+                                        <path d="m12 5 7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="relative flex flex-col gap-8 overflow-hidden rounded-2xl border p-6 shadow bg-background text-foreground ">
+                                <h2 class="flex items-center justify-center flex-row gap-3 text-xl font-medium capitalize">Dedicated Hosting</h2>
+                                <div class="relative h-12">
+                                    <h1 class="text-4xl font-medium">$100</h1>
+                                </div>
+                                <div class="flex-1 space-y-2">
+                                    <h3 class="text-sm font-medium">Great for 
+                                    <!-- -->
+                                    dedicated hosting
+                                    <!-- -->
+                                    .</h3>
+                                    <ul class="space-y-2">
+                                        <li class="flex items-center gap-2 text-sm font-medium text-foreground/60">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check text-sm">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <!-- -->
+                                            4 vCPUs
+                                        </li>
+                                        <li class="flex items-center gap-2 text-sm font-medium text-foreground/60">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check text-sm">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <!-- -->
+                                            16GB RAM
+                                        </li>
+                                        <li class="flex items-center gap-2 text-sm font-medium text-foreground/60">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check text-sm">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <!-- -->
+                                            500GB NVMe SSD
+                                        </li>
+                                        <li class="flex items-center gap-2 text-sm font-medium text-foreground/60">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check text-sm">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <!-- -->
+                                            Dedicated Resources
+                                        </li>
+                                        <li class="flex items-center gap-2 text-sm font-medium text-foreground/60">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check text-sm">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <!-- -->
+                                            24/7 Support
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 h-9 px-4 py-2 group rounded z-50" type="button">
+                                    Get started
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right -me-1 ms-2 opacity-60 transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+                                        <path d="M5 12h14"></path>
+                                        <path d="m12 5 7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="relative flex flex-col gap-8 overflow-hidden rounded-2xl border p-6 shadow bg-background text-foreground ">
+                                <h2 class="flex items-center justify-center flex-row gap-3 text-xl font-medium capitalize">Enterprise Solutions</h2>
+                                <div class="relative h-12">
+                                    <h1 class="text-4xl font-medium">Custom</h1>
+                                </div>
+                                <div class="flex-1 space-y-2">
+                                    <h3 class="text-sm font-medium">Great for 
+                                    <!-- -->
+                                    enterprise solutions
+                                    <!-- -->
+                                    .</h3>
+                                    <ul class="space-y-2">
+                                        <li class="flex items-center gap-2 text-sm font-medium text-foreground/60">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check text-sm">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <!-- -->
+                                            Custom dedicated servers
+                                        </li>
+                                        <li class="flex items-center gap-2 text-sm font-medium text-foreground/60">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check text-sm">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <!-- -->
+                                            High-Performance Hardware
+                                        </li>
+                                        <li class="flex items-center gap-2 text-sm font-medium text-foreground/60">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check text-sm">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <!-- -->
+                                            Advanced Security
+                                        </li>
+                                        <li class="flex items-center gap-2 text-sm font-medium text-foreground/60">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check text-sm">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <!-- -->
+                                            Premium Support
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 h-9 px-4 py-2 group rounded z-50" type="button">
+                                    Contact Us
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right -me-1 ms-2 opacity-60 transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+                                        <path d="M5 12h14"></path>
+                                        <path d="m12 5 7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="bg-zinc-950 text-zinc-50">
+                        <div class="max-w-screen-xl mx-auto px-4 py-16">
+                            <section class="mb-16 min-h-screen">
+                                <h2 class="text-3xl font-bold text-center mb-8">What Our Customers Say</h2>
+                                <div class="grid md:grid-cols-3 gap-6">
+                                    <div class="rounded-xl border text-card-foreground shadow bg-zinc-900/50 border-zinc-800 hover:border-zinc-700">
+                                        <div class="p-6">
+                                            <div class="flex items-center mb-4">
+                                                <span class="relative flex shrink-0 overflow-hidden rounded-full h-10 w-10 mr-4">
+                                                    <span class="flex h-full w-full items-center justify-center rounded-full bg-muted">AJ</span>
+                                                </span>
+                                                <div>
+                                                    <h3 class="font-semibold">Alex Johnson</h3>
+                                                    <p class="text-sm text-zinc-400">Pro Gamer</p>
+                                                </div>
+                                            </div>
+                                            <p class="text-zinc-300 mb-4">The low latency and reliability of these servers have significantly improved my competitive gaming performance. Highly recommended!</p>
+                                            <div class="flex">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-xl border text-card-foreground shadow bg-zinc-900/50 border-zinc-800 hover:border-zinc-700">
+                                        <div class="p-6">
+                                            <div class="flex items-center mb-4">
+                                                <span class="relative flex shrink-0 overflow-hidden rounded-full h-10 w-10 mr-4">
+                                                    <span class="flex h-full w-full items-center justify-center rounded-full bg-muted">SL</span>
+                                                </span>
+                                                <div>
+                                                    <h3 class="font-semibold">Sarah Lee</h3>
+                                                    <p class="text-sm text-zinc-400">Game Developer</p>
+                                                </div>
+                                            </div>
+                                            <p class="text-zinc-300 mb-4">As a game developer, I appreciate the robust infrastructure and excellent support. It &#x27;s made hosting our multiplayer games a breeze.</p>
+                                            <div class="flex">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-xl border text-card-foreground shadow bg-zinc-900/50 border-zinc-800 hover:border-zinc-700">
+                                        <div class="p-6">
+                                            <div class="flex items-center mb-4">
+                                                <span class="relative flex shrink-0 overflow-hidden rounded-full h-10 w-10 mr-4">
+                                                    <span class="flex h-full w-full items-center justify-center rounded-full bg-muted">MC</span>
+                                                </span>
+                                                <div>
+                                                    <h3 class="font-semibold">Mike Chen</h3>
+                                                    <p class="text-sm text-zinc-400">Esports Manager</p>
+                                                </div>
+                                            </div>
+                                            <p class="text-zinc-300 mb-4">We &#x27;ve hosted numerous tournaments on these servers, and the performance has been consistently outstanding. A game-changer for esports!</p>
+                                            <div class="flex">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-zinc-600">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-xl border text-card-foreground shadow bg-zinc-900/50 border-zinc-800 hover:border-zinc-700">
+                                        <div class="p-6">
+                                            <div class="flex items-center mb-4">
+                                                <span class="relative flex shrink-0 overflow-hidden rounded-full h-10 w-10 mr-4">
+                                                    <span class="flex h-full w-full items-center justify-center rounded-full bg-muted">AJ</span>
+                                                </span>
+                                                <div>
+                                                    <h3 class="font-semibold">Alex Johnson</h3>
+                                                    <p class="text-sm text-zinc-400">Pro Gamer</p>
+                                                </div>
+                                            </div>
+                                            <p class="text-zinc-300 mb-4">The low latency and reliability of these servers have significantly improved my competitive gaming performance. Highly recommended!</p>
+                                            <div class="flex">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-xl border text-card-foreground shadow bg-zinc-900/50 border-zinc-800 hover:border-zinc-700">
+                                        <div class="p-6">
+                                            <div class="flex items-center mb-4">
+                                                <span class="relative flex shrink-0 overflow-hidden rounded-full h-10 w-10 mr-4">
+                                                    <span class="flex h-full w-full items-center justify-center rounded-full bg-muted">SL</span>
+                                                </span>
+                                                <div>
+                                                    <h3 class="font-semibold">Sarah Lee</h3>
+                                                    <p class="text-sm text-zinc-400">Game Developer</p>
+                                                </div>
+                                            </div>
+                                            <p class="text-zinc-300 mb-4">As a game developer, I appreciate the robust infrastructure and excellent support. It &#x27;s made hosting our multiplayer games a breeze.</p>
+                                            <div class="flex">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-xl border text-card-foreground shadow bg-zinc-900/50 border-zinc-800 hover:border-zinc-700">
+                                        <div class="p-6">
+                                            <div class="flex items-center mb-4">
+                                                <span class="relative flex shrink-0 overflow-hidden rounded-full h-10 w-10 mr-4">
+                                                    <span class="flex h-full w-full items-center justify-center rounded-full bg-muted">MC</span>
+                                                </span>
+                                                <div>
+                                                    <h3 class="font-semibold">Mike Chen</h3>
+                                                    <p class="text-sm text-zinc-400">Esports Manager</p>
+                                                </div>
+                                            </div>
+                                            <p class="text-zinc-300 mb-4">We &#x27;ve hosted numerous tournaments on these servers, and the performance has been consistently outstanding. A game-changer for esports!</p>
+                                            <div class="flex">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-yellow-400">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-zinc-600">
+                                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <footer class="w-full px-4 sm:px-6 lg:px-8 border-t border-zinc-800 pt-8 pb-5">
+                        <div class="max-w-screen-xl mx-auto">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                                <div class="text-center sm:text-left">
+                                    <h3 class="font-bold text-lg mb-4">Acme Host</h3>
+                                    <p class="text-zinc-400 text-sm sm:text-base">Empowering gamers with lightning-fast, reliable server solutions worldwide.</p>
+                                </div>
+                                <div class="text-center sm:text-left">
+                                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                                    <ul class="space-y-2.5">
+                                        <li>
+                                            <a href="#" class="text-zinc-400 hover:text-zinc-200 transition text-sm sm:text-base inline-block">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="#pricing" class="text-zinc-400 hover:text-zinc-200 transition text-sm sm:text-base inline-block">Pricing</a>
+                                        </li>
+                                        <li>
+                                            <a href="#features" class="text-zinc-400 hover:text-zinc-200 transition text-sm sm:text-base inline-block">Features</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="text-zinc-400 hover:text-zinc-200 transition text-sm sm:text-base inline-block">Contact</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="text-center sm:text-left">
+                                    <h4 class="font-semibold mb-4">Support</h4>
+                                    <ul class="space-y-2.5">
+                                        <li>
+                                            <a href="#" class="text-zinc-400 hover:text-zinc-200 transition text-sm sm:text-base inline-block">FAQ</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="text-zinc-400 hover:text-zinc-200 transition text-sm sm:text-base inline-block">Documentation</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="text-zinc-400 hover:text-zinc-200 transition text-sm sm:text-base inline-block">Community Forum</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="text-zinc-400 hover:text-zinc-200 transition text-sm sm:text-base inline-block">Status</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="text-center sm:text-left">
+                                    <h4 class="font-semibold mb-4">Connect With Us</h4>
+                                    <div class="flex justify-center sm:justify-start space-x-5">
+                                        <a href="#" class="text-zinc-400 hover:text-zinc-200 transition p-2 hover:bg-zinc-800/50 rounded-lg" aria-label="Twitter">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter w-5 h-5 sm:w-6 sm:h-6">
+                                                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                                            </svg>
+                                        </a>
+                                        <a href="#" class="text-zinc-400 hover:text-zinc-200 transition p-2 hover:bg-zinc-800/50 rounded-lg" aria-label="Facebook">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook w-5 h-5 sm:w-6 sm:h-6">
+                                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                            </svg>
+                                        </a>
+                                        <a href="#" class="text-zinc-400 hover:text-zinc-200 transition p-2 hover:bg-zinc-800/50 rounded-lg" aria-label="Instagram">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram w-5 h-5 sm:w-6 sm:h-6">
+                                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                                            </svg>
+                                        </a>
+                                        <a href="#" class="text-zinc-400 hover:text-zinc-200 transition p-2 hover:bg-zinc-800/50 rounded-lg" aria-label="Twitch">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitch w-5 h-5 sm:w-6 sm:h-6">
+                                                <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-8 pt-8 border-t border-zinc-800 text-center">
+                                <p class="text-zinc-400 text-sm">© 
+                                <!-- -->
+                                2025
+                                <!-- -->
+                                Acme Pro. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <script src="/_next/static/chunks/webpack-d4d8f642dac0314f.js" async=""></script>
+        <script>
+            (self.__next_f = self.__next_f || []).push([0])
+        </script>
+        <script>
+            self.__next_f.push([1, "1:\"$Sreact.fragment\"\n2:I[9724,[\"177\",\"static/chunks/app/layout-d7e99bffda0ebf0e.js\"],\"ThemeProvider\"]\n3:I[5244,[],\"\"]\n4:I[3866,[],\"\"]\n5:I[7033,[],\"ClientPageRoot\"]\n6:I[8289,[\"782\",\"static/chunks/782-71ab0504a042fecb.js\",\"217\",\"static/chunks/217-9aceb0ed4172c62f.js\",\"702\",\"static/chunks/702-78241cd204d38619.js\",\"974\",\"static/chunks/app/page-a93402034904a566.js\"],\"default\"]\n9:I[6213,[],\"OutletBoundary\"]\nb:I[6213,[],\"MetadataBoundary\"]\nd:I[6213,[],\"ViewportBoundary\"]\nf:I[4835,[],\"\"]\n:HL[\"/_next/static/media/a34f9d1faa5f3315-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/c4e27da937809267.css\",\"style\"]\n"])
+        </script>
+        <script>
+            self.__next_f.push([1, "0:{\"P\":null,\"b\":\"NkUYZwXjhKd9saRR91SjR\",\"p\":\"\",\"c\":[\"\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/c4e27da937809267.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"className\":\"dark\",\"children\":[\"$\",\"body\",null,{\"className\":\"__className_d65c78\",\"children\":[\"$\",\"$L2\",null,{\"attribute\":\"class\",\"defaultTheme\":\"dark\",\"enableSystem\":true,\"disableTransitionOnChange\":true,\"children\":[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[],[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]}]}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L5\",null,{\"Component\":\"$6\",\"searchParams\":{},\"params\":{},\"promises\":[\"$@7\",\"$@8\"]}],null,[\"$\",\"$L9\",null,{\"children\":\"$La\"}]]}],{},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"sGLVRYqHE73m6RKbB1NZR\",{\"children\":[[\"$\",\"$Lb\",null,{\"children\":\"$Lc\"}],[\"$\",\"$Ld\",null,{\"children\":\"$Le\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}]]}],false]],\"m\":\"$undefined\",\"G\":[\"$f\",\"$undefined\"],\"s\":false,\"S\":true}\n"])
+        </script>
+        <script>
+            self.__next_f.push([1, "7:{}\n8:{}\n"])
+        </script>
+        <script>
+            self.__next_f.push([1, "e:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nc:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"1\",{\"children\":\"Zynox\"}],[\"$\",\"meta\",\"2\",{\"name\":\"description\",\"content\":\"Modern Hosting Template\"}],[\"$\",\"link\",\"3\",{\"rel\":\"icon\",\"href\":\"/favicon.ico\",\"type\":\"image/x-icon\",\"sizes\":\"16x16\"}]]\n"])
+        </script>
+        <script>
+            self.__next_f.push([1, "a:null\n"])
+        </script>
+    </body>
+</html>
