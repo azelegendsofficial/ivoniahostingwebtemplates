@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivonia Hosting</title>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: #000;
+            color: #0f0;
+            padding: 20px;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .terminal {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .ascii-art {
+            font-size: 14px;
+            line-height: 1.2;
+            white-space: pre;
+            margin-bottom: 20px;
+        }
+        .menu {
+            margin-top: 30px;
+        }
+        .option {
+            margin: 10px 0;
+            cursor: pointer;
+        }
+        .option:hover {
+            text-decoration: underline;
+        }
+        .prompt {
+            margin-top: 30px;
+            display: flex;
+        }
+        .prompt-symbol {
+            margin-right: 10px;
+        }
+        #command-input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #0f0;
+            font-family: monospace;
+            font-size: 16px;
+            width: 100%;
+        }
+        .content {
+            margin-top: 20px;
+            display: none;
+        }
+        .blinking-cursor {
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <div class="header">
+            <div class="ascii-art">
+ ___                _                       
+|_ _|_   _____ _ __(_) __ _                 
+ | |\ \ / / _ \ '__| |/ _` |                
+ | | \ V / (_) | |  | | (_| |                
+|___| \_/ \___/|_|  |_|\__,_|                
+ _   _           _   _                       
+| | | | ___  ___| |_(_)_ __   __ _          
+| |_| |/ _ \/ __| __| | '_ \ / _` |         
+|  _  | (_) \__ \ |_| | | | | (_| |         
+|_| |_|\___/|___/\__|_|_| |_|\__, |         
+                             |___/           
+            </div>
+        </div>
+
+        <div class="menu">
+            <div class="option" onclick="showContent('plans')">1. Plans</div>
+            <div class="option" onclick="showContent('about')">2. About</div>
+            <div class="option" onclick="showContent('contact')">3. Contact</div>
+            <div class="option" onclick="showContent('panel')">4. Panel</div>
+        </div>
+
+        <div class="prompt">
+            <div class="prompt-symbol">ivonia@hosting:~$</div>
+            <input type="text" id="command-input" autofocus>
+            <span class="blinking-cursor">_</span>
+        </div>
+
+        <div id="plans" class="content">
+            <h2>Plans</h2>
+            <p>[ ] Basic Plan: $5/mo - 1GB RAM, 10GB SSD, 1 CPU Core</p>
+            <p>[ ] Pro Plan: $10/mo - 2GB RAM, 20GB SSD, 2 CPU Cores</p>
+            <p>[ ] Enterprise Plan: $20/mo - 4GB RAM, 40GB SSD, 4 CPU Cores</p>
+            <p>Type 'back' to return to main menu</p>
+        </div>
+
+        <div id="about" class="content">
+            <h2>About</h2>
+            <p>Ivonia Hosting provides reliable and affordable web hosting solutions.</p>
+            <p>Founded in 2023, we focus on delivering excellent customer service and uptime.</p>
+            <p>Our infrastructure is built on top-tier hardware located in secure data centers.</p>
+            <p>Type 'back' to return to main menu</p>
+        </div>
+
+        <div id="contact" class="content">
+            <h2>Contact</h2>
+            <p>Email: support@ivoniahosting.com</p>
+            <p>Phone: +1-555-123-4567</p>
+            <p>Hours: 24/7 Support</p>
+            <p>Type 'back' to return to main menu</p>
+        </div>
+
+        <div id="panel" class="content">
+            <h2>Panel</h2>
+            <p>Access your control panel at: https://panel.ivoniahosting.com</p>
+            <p>Username: [Your Username]</p>
+            <p>Password: [Your Password]</p>
+            <p>Type 'back' to return to main menu</p>
+        </div>
+    </div>
+
+    <script>
+        const input = document.getElementById('command-input');
+        const plans = document.getElementById('plans');
+        const about = document.getElementById('about');
+        const contact = document.getElementById('contact');
+        const panel = document.getElementById('panel');
+
+        input.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const command = input.value.toLowerCase().trim();
+                input.value = '';
+                
+                switch(command) {
+                    case '1':
+                    case 'plans':
+                        showContent('plans');
+                        break;
+                    case '2':
+                    case 'about':
+                        showContent('about');
+                        break;
+                    case '3':
+                    case 'contact':
+                        showContent('contact');
+                        break;
+                    case '4':
+                    case 'panel':
+                        showContent('panel');
+                        break;
+                    case 'back':
+                        hideAllContent();
+                        break;
+                    case 'clear':
+                        hideAllContent();
+                        break;
+                    case 'help':
+                        alert('Available commands: 1 or plans, 2 or about, 3 or contact, 4 or panel, back, clear, help');
+                        break;
+                    default:
+                        alert('Command not recognized. Type a number (1-4) or "help" for available commands.');
+                }
+            }
+        });
+
+        function showContent(contentId) {
+            hideAllContent();
+            document.getElementById(contentId).style.display = 'block';
+        }
+
+        function hideAllContent() {
+            plans.style.display = 'none';
+            about.style.display = 'none';
+            contact.style.display = 'none';
+            panel.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
