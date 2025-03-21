@@ -50,19 +50,22 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-weight: bold;
-            font-size: 18px;
+            font-weight: 600;
+            font-size: 16px;
         }
         
         .logo img {
             width: 25px;
             height: 25px;
+            border-radius: 5px;
         }
         
         .menu {
             display: flex;
             gap: 25px;
             align-items: center;
+            margin-right: auto;
+            margin-left: 50px;
         }
         
         .menu a {
@@ -81,14 +84,18 @@
         }
         
         .dropdown-content {
-            display: block;
+            display: none;
             position: absolute;
             background-color: var(--card-bg);
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
             border-radius: 4px;
-            margin-top: 10px;
+            margin-top: 5px;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
         
         .dropdown-content a {
@@ -187,7 +194,7 @@
         
         .trustpilot {
             text-align: center;
-            margin: 40px 0;
+            margin: 40px 0 20px;
         }
         
         /* Categories */
@@ -207,30 +214,31 @@
         .category-card {
             background-color: var(--card-bg);
             border-radius: 8px;
-            padding: 20px;
+            padding: 16px;
             height: 100%;
         }
         
         .category-icon {
             width: 32px;
             height: 32px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         
         .category-title {
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-size: 15px;
         }
         
         .category-description {
             color: var(--secondary-text);
             font-size: 13px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             line-height: 1.5;
         }
         
-        .browse-btn {
+        .browse-link {
+            display: block;
             background-color: var(--darker-bg);
             color: var(--text);
             border: none;
@@ -239,9 +247,12 @@
             cursor: pointer;
             width: 100%;
             font-size: 14px;
+            text-align: center;
+            text-decoration: none;
+            margin-top: auto;
         }
         
-        .browse-btn:hover {
+        .browse-link:hover {
             background-color: rgba(0, 0, 0, 0.3);
         }
         
@@ -255,12 +266,12 @@
         
         .announcement-title {
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-size: 15px;
         }
         
         .announcement-content {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-size: 14px;
         }
         
@@ -297,17 +308,17 @@
             <nav class="navbar">
                 <div class="logo">
                     <img src="/api/placeholder/25/25" alt="HostingKarle Logo">
-                    <span>IvoniaHosting</span>
+                    <span>HostingKarle</span>
                 </div>
                 <div class="menu">
                     <a href="/">Home</a>
                     <div class="dropdown">
                         <a href="#" class="shop">Shop</a>
                         <div class="dropdown-content">
-                            <a href="#">Hosting Plans</a>
+                            <a href="/hosting">Hosting Plans</a>
                         </div>
                     </div>
-                    <a href="#">Announcements</a>
+                    <a href="/announcement">Announcements</a>
                 </div>
                 <div class="auth">
                     <button class="login-btn">Log In</button>
@@ -319,12 +330,12 @@
     
     <main class="container">
         <section class="welcome-section">
-            <h1>Welcome to HostingKarle</h1>
+            <h1>Welcome to IvoniaHosting</h1>
             <div class="welcome-content">
                 <p>IvoniaHosting Provides Amazing Hosting and Developmental Services at Minimal Prices.</p>
                 <p>Make IvoniaHosting your Hosting Buddy!</p>
                 <p>Take a Look at the categories below to purchase a plan!</p>
-                <p>You can <a href="https://dc.gg/ivoniasmp" class="cta-link">VISIT OUR DISCORD SERVER</a> to get Discount Codes.</p>
+                <p>You can <a href="#" class="cta-link">VISIT OUR DISCORD SERVER</a> to get Discount Codes.</p>
                 <div class="enjoy">
                     <span>Enjoy</span>
                     <div class="enjoy-icon">✓</div>
@@ -332,7 +343,7 @@
             </div>
             
             <div class="trustpilot">
-                <img src="/api/placeholder/300/100" alt="Trustpilot Rating - 5 Stars">
+                <img src="/api/placeholder/300/100" alt="promotion">
             </div>
         </section>
         
@@ -343,10 +354,12 @@
                     <img src="/api/placeholder/32/32" alt="Hosting Plans Icon" class="category-icon">
                     <div class="category-title">Hosting Plans</div>
                     <div class="category-description">
-                        Visit the Entire Hosting Collection on IvoniaHosting.<br>
-You Make your projects, we host your dreams!
+                        With the Entire Hosting Collection on HostingKarle!
                     </div>
-                    <button class="browse-btn">Browse Category</button>
+                    <div class="category-description">
+                        Make your projects, we host your dreams!
+                    </div>
+                    <a href="/hosting.html" class="browse-link">Browse Category</a>
                 </div>
                 
                 <div class="category-card">
@@ -355,40 +368,46 @@ You Make your projects, we host your dreams!
                     <div class="category-description">
                         No Holding Fast Game Servers on HostingKarle with 24/7 Live Support and Development Assistance!
                     </div>
-                    <button class="browse-btn">Browse Category</button>
+                    <a href="/mc.html" class="browse-link">Browse Category</a>
                 </div>
                 
                 <div class="category-card">
                     <img src="/api/placeholder/32/32" alt="Paid Minecraft Servers Icon" class="category-icon">
                     <div class="category-title">Paid Minecraft Servers</div>
                     <div class="category-description">
-                        Get the best performing Minecraft Hosting Services on HostingKarle!<br>
+                        Get the best performing Minecraft Hosting Services on IvoniaHosting!
+                    </div>
+                    <div class="category-description">
                         Get Free Development, Custom Setting, Support Services and More!
                     </div>
-                    <button class="browse-btn">Browse Category</button>
+                    <a href="/paid.mc.html" class="browse-link">Browse Category</a>
                 </div>
                 
                 <div class="category-card">
                     <img src="/api/placeholder/32/32" alt="VPS Hosting Icon" class="category-icon">
                     <div class="category-title">VPS Hosting</div>
                     <div class="category-description">
-                        Buy Lifetime Performing VPS on IvoniaHosting.<br>
-                        Register on our <a href="/vps.html" class="cta-link">VPS Panel</a> to get your service.
+                        Buy Lifetime Performing VPS on IvoniaHosting.
                     </div>
-                    <button class="browse-btn">Browse Category</button>
+                    <div class="category-description">
+                        Register on our <a href="#" class="cta-link">VPS Panel</a> to get your service.
+                    </div>
+                    <a href="/vps.html" class="browse-link">Browse Category</a>
                 </div>
                 
                 <div class="category-card">
                     <img src="/api/placeholder/32/32" alt="German Hosted VPS Icon" class="category-icon">
                     <div class="category-title">German Hosted VPS</div>
                     <div class="category-description">
-                        High performing VPS located in Germany.<br>
+                        High performing VPS located in Germany.
+                    </div>
+                    <div class="category-description">
                         These can be converted to Windows/RDP Servers
                     </div>
                     <div class="category-description">
                         - Good for Website Hosting, Data Processing, Hosting, Daily Use Etc.
                     </div>
-                    <button class="browse-btn">Browse Category</button>
+                    <a href="/vps-german.html" class="browse-link">Browse Category</a>
                 </div>
             </div>
         </section>
@@ -397,11 +416,11 @@ You Make your projects, we host your dreams!
             <h2 class="section-header">Announcements</h2>
             <div class="announcement-card">
                 <div class="announcement-title">Christmas Sale Activated!</div>
-                <div class="announcement-content">Get this Christmas celebrated with HostingKarle!</div>
+                <div class="announcement-content">Get this Christmas celebrated with IvoniaHosting!</div>
                 <div class="announcement-content">Get upto 60% off on Servers and 30% off...</div>
                 <div class="announcement-meta">
                     <span>Published 2 months ago</span>
-                    <a href="announcement/2.html" class="read-more">Read More</a>
+                    <a href="/announcement/2.html" class="read-more">Read More</a>
                 </div>
             </div>
         </section>
