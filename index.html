@@ -1,198 +1,334 @@
+
 <!DOCTYPE html>
 <html lang="en">
+<!-- Software build by https://paymenter.org -->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ivonia Hosting</title>
-    <style>
-        body {
-            font-family: monospace;
-            background-color: #000;
-            color: #0f0;
-            padding: 20px;
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="pVyh44gLOnZ9AY1Ol8lisG3dOr8hfpj2oYRwh4qM">
+    <script type="c02a93bdfc71b63eb8c0bb4d-text/javascript">
+        if ("0" == 1) {
+            document.addEventListener("DOMContentLoaded", function() {
+                window.snow();
+            });
         }
-        .terminal {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            flex-grow: 1;
-            overflow-y: auto;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .ascii-art {
-            font-size: 14px;
-            line-height: 1.2;
-            white-space: pre;
-            margin-bottom: 20px;
-        }
-        .menu {
-            margin-top: 30px;
-        }
-        .option {
-            margin: 10px 0;
-            cursor: pointer;
-        }
-        .option:hover {
-            text-decoration: underline;
-        }
-        .prompt {
-            margin-top: 30px;
-            display: flex;
-        }
-        .prompt-symbol {
-            margin-right: 10px;
-        }
-        #command-input {
-            background: transparent;
-            border: none;
-            outline: none;
-            color: #0f0;
-            font-family: monospace;
-            font-size: 16px;
-            width: 100%;
-        }
-        .content {
-            margin-top: 20px;
-            display: none;
-        }
-        .blinking-cursor {
-            animation: blink 1s infinite;
-        }
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-    </style>
-</head>
-<body>
-    <div class="terminal">
-        <div class="header">
-            <div class="ascii-art">
- ___                _                       
-|_ _|_   _____ _ __(_) __ _                 
- | |\ \ / / _ \ '__| |/ _` |                
- | | \ V / (_) | |  | | (_| |                
-|___| \_/ \___/|_|  |_|\__,_|                
- _   _           _   _                       
-| | | | ___  ___| |_(_)_ __   __ _          
-| |_| |/ _ \/ __| __| | '_ \ / _` |         
-|  _  | (_) \__ \ |_| | | | | (_| |         
-|_| |_|\___/|___/\__|_|_| |_|\__, |         
-                             |___/           
-            </div>
-        </div>
-
-        <div class="menu">
-            <div class="option" onclick="showContent('plans')">1. Plans</div>
-            <div class="option" onclick="showContent('about')">2. About</div>
-            <div class="option" onclick="showContent('contact')">3. Contact</div>
-            <div class="option" onclick="showContent('panel')">4. Panel</div>
-        </div>
-
-        <div class="prompt">
-            <div class="prompt-symbol">ivonia@hosting:~$</div>
-            <input type="text" id="command-input" autofocus>
-            <span class="blinking-cursor">_</span>
-        </div>
-
-        <div id="plans" class="content">
-            <h2>Plans</h2>
-            <p>[ ] Basic Plan: $5/mo - 1GB RAM, 10GB SSD, 1 CPU Core</p>
-            <p>[ ] Pro Plan: $10/mo - 2GB RAM, 20GB SSD, 2 CPU Cores</p>
-            <p>[ ] Enterprise Plan: $20/mo - 4GB RAM, 40GB SSD, 4 CPU Cores</p>
-            <p>Type 'back' to return to main menu</p>
-        </div>
-
-        <div id="about" class="content">
-            <h2>About</h2>
-            <p>Ivonia Hosting provides reliable and affordable web hosting solutions.</p>
-            <p>Founded in 2023, we focus on delivering excellent customer service and uptime.</p>
-            <p>Our infrastructure is built on top-tier hardware located in secure data centers.</p>
-            <p>Type 'back' to return to main menu</p>
-        </div>
-
-        <div id="contact" class="content">
-            <h2>Contact</h2>
-            <p>Email: support@ivoniahosting.com</p>
-            <p>Phone: +1-555-123-4567</p>
-            <p>Hours: 24/7 Support</p>
-            <p>Type 'back' to return to main menu</p>
-        </div>
-
-        <div id="panel" class="content">
-            <h2>Panel</h2>
-            <p>Access your control panel at: https://panel.ivoniahosting.com</p>
-            <p>Username: [Your Username]</p>
-            <p>Password: [Your Password]</p>
-            <p>Type 'back' to return to main menu</p>
-        </div>
-    </div>
-
-    <script>
-        const input = document.getElementById('command-input');
-        const plans = document.getElementById('plans');
-        const about = document.getElementById('about');
-        const contact = document.getElementById('contact');
-        const panel = document.getElementById('panel');
-
-        input.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                const command = input.value.toLowerCase().trim();
-                input.value = '';
-                
-                switch(command) {
-                    case '1':
-                    case 'plans':
-                        showContent('plans');
-                        break;
-                    case '2':
-                    case 'about':
-                        showContent('about');
-                        break;
-                    case '3':
-                    case 'contact':
-                        showContent('contact');
-                        break;
-                    case '4':
-                    case 'panel':
-                        showContent('panel');
-                        break;
-                    case 'back':
-                        hideAllContent();
-                        break;
-                    case 'clear':
-                        hideAllContent();
-                        break;
-                    case 'help':
-                        alert('Available commands: 1 or plans, 2 or about, 3 or contact, 4 or panel, back, clear, help');
-                        break;
-                    default:
-                        alert('Command not recognized. Type a number (1-4) or "help" for available commands.');
+        window.addEventListener('keydown', function(e) {
+            var ctrlDown = true;
+            var ctrlKey = 17,
+                enterKey = 13;
+            $(document).keydown(function(e) {
+                if (e.keyCode == ctrlKey) ctrlDown = true;
+                if (e.keyCode == enterKey && ctrlDown) {
+                    if ($('#submit').length) {
+                        $('#submit').click();
+                    }
                 }
-            }
+            }).keyup(function(e) {
+                if (e.keyCode == ctrlKey) ctrlDown = false;
+            });
         });
-
-        function showContent(contentId) {
-            hideAllContent();
-            document.getElementById(contentId).style.display = 'block';
-        }
-
-        function hideAllContent() {
-            plans.style.display = 'none';
-            about.style.display = 'none';
-            contact.style.display = 'none';
-            panel.style.display = 'none';
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia(
+                '(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
         }
     </script>
+    <style>
+        .snow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        :root {
+            --secondary-50: #ffffff;
+            --secondary-100: #fafcff;
+            --secondary-200: #ebeef3;
+            --secondary-300: #bbbfd2;
+            --secondary-400: #808498;
+            --secondary-500: #606372;
+            --secondary-600: #4d4f60;
+            --secondary-700: #353741;
+            --secondary-800: #1c1c20;
+            --secondary-900: #000000;
+
+            --primary-50: #edf0ff;
+            --primary-100: #c6dbff;
+            --primary-200: #9bbefb;
+            --primary-300: #799cd8;
+            --primary-400: #5270fd;
+        }
+
+        .dark {
+            --secondary-50: #1e202d;
+            --secondary-100: #313441;
+            --secondary-200: #404351;
+            --secondary-300: #4f525e;
+            --secondary-400: #656874;
+            --secondary-500: #7d8091;
+            --secondary-600: #aeb2c2;
+            --secondary-700: #cacbd2;
+            --secondary-800: #f1f1f1;
+            --secondary-900: #ffffff;
+        }
+    </style>
+            <title>HostingKarle - Home</title>
+    
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap">
+
+    <link rel="preload" as="style" href="https://store.hostingkarle.com/default/assets/app-bb7a7cfb.css" /><link rel="modulepreload" href="https://store.hostingkarle.com/default/assets/app-ff1ed6f4.js" /><link rel="stylesheet" href="https://store.hostingkarle.com/default/assets/app-bb7a7cfb.css" data-navigate-track="reload" /><script type="c02a93bdfc71b63eb8c0bb4d-module" src="https://store.hostingkarle.com/default/assets/app-ff1ed6f4.js" data-navigate-track="reload"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" type="c02a93bdfc71b63eb8c0bb4d-text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+            <link rel="icon" href="https://store.hostingkarle.com/images/1724500319.png" type="image/png">
+        <meta content="Home" property="og:title">
+    <meta content="Buy Amazing Hosting Services on HostingKarle | Minecraft Hosting | VPS Hosting | Website Development | Programing Services and Much more!" property="og:description">
+    <meta content="Buy Amazing Hosting Services on HostingKarle | Minecraft Hosting | VPS Hosting | Website Development | Programing Services and Much more!" name="description">
+    <meta content='https://paymenter.org/assets/images/paymenter.png' property='og:image'>
+    <link type="application/json+oembed"
+        href="https://store.hostingkarle.com/manifest.json?title=HostingKarle&author_url=https://store.hostingkarle.com&author_name=HostingKarle" />
+    <meta name="twitter:card" content=" summary_large_image ">
+    <meta name="theme-color" content="#5270FD">
+<!-- Livewire Styles --><style >[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak] {display: none !important;}</style>
+<script data-cfasync="false" nonce="7d51ebf6-0a6b-40c6-8b01-ca687ff735b1">try{(function(w,d){!function(j,k,l,m){if(j.zaraz)console.error("zaraz is loaded twice");else{j[l]=j[l]||{};j[l].executed=[];j.zaraz={deferred:[],listeners:[]};j.zaraz._v="5850";j.zaraz._n="7d51ebf6-0a6b-40c6-8b01-ca687ff735b1";j.zaraz.q=[];j.zaraz._f=function(n){return async function(){var o=Array.prototype.slice.call(arguments);j.zaraz.q.push({m:n,a:o})}};for(const p of["track","set","debug"])j.zaraz[p]=j.zaraz._f(p);j.zaraz.init=()=>{var q=k.getElementsByTagName(m)[0],r=k.createElement(m),s=k.getElementsByTagName("title")[0];s&&(j[l].t=k.getElementsByTagName("title")[0].text);j[l].x=Math.random();j[l].w=j.screen.width;j[l].h=j.screen.height;j[l].j=j.innerHeight;j[l].e=j.innerWidth;j[l].l=j.location.href;j[l].r=k.referrer;j[l].k=j.screen.colorDepth;j[l].n=k.characterSet;j[l].o=(new Date).getTimezoneOffset();if(j.dataLayer)for(const t of Object.entries(Object.entries(dataLayer).reduce(((u,v)=>({...u[1],...v[1]})),{})))zaraz.set(t[0],t[1],{scope:"page"});j[l].q=[];for(;j.zaraz.q.length;){const w=j.zaraz.q.shift();j[l].q.push(w)}r.defer=!0;for(const x of[localStorage,sessionStorage])Object.keys(x||{}).filter((z=>z.startsWith("_zaraz_"))).forEach((y=>{try{j[l]["z_"+y.slice(7)]=JSON.parse(x.getItem(y))}catch{j[l]["z_"+y.slice(7)]=x.getItem(y)}}));r.referrerPolicy="origin";r.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(j[l])));q.parentNode.insertBefore(r,q)};["complete","interactive"].includes(k.readyState)?zaraz.init():j.addEventListener("DOMContentLoaded",zaraz.init)}}(w,d,"zarazData","script");window.zaraz._p=async bs=>new Promise((bt=>{if(bs){bs.e&&bs.e.forEach((bu=>{try{const bv=d.querySelector("script[nonce]"),bw=bv?.nonce||bv?.getAttribute("nonce"),bx=d.createElement("script");bw&&(bx.nonce=bw);bx.innerHTML=bu;bx.onload=()=>{d.head.removeChild(bx)};d.head.appendChild(bx)}catch(by){console.error(`Error executing script: ${bu}\n`,by)}}));Promise.allSettled((bs.f||[]).map((bz=>fetch(bz[0],bz[1]))))}bt()}));zaraz._p({"e":["(function(w,d){})(window,document)"]});})(window,document)}catch(e){throw fetch("/cdn-cgi/zaraz/t"),e;};</script></head>
+
+<body class="font-sans bg-secondary-100 dark:bg-secondary-50 text-secondary-700">
+
+        <div id="app" class="min-h-screen">
+                            <nav class="bg-secondary-50 dark:bg-secondary-100 dark:border-0 border-b-2 border-secondary-200">
+    <div class="max-w-[1650px] mx-auto block md:flex items-center gap-x-10 px-5">
+        <div class="flex justify-between md:w-auto w-full items-center">
+            <a href="https://store.hostingkarle.com" class="flex items-center text-secondary-900 font-semibold text-lg py-2 gap-x-2 w-max">
+                <img src="https://store.hostingkarle.com/images/1724500319.png" alt="HostingKarle" class="w-10" />
+                IvoniaHosting
+            </a>
+            <!-- Mobile menu button -->
+            <div class="flex md:hidden">
+                <button type="button" class="button button-secondary-outline" onclick="if (!window.__cfRLUnblockHandlers) return false; openMobileMenu()" data-cf-modified-c02a93bdfc71b63eb8c0bb4d-="">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
+            <script type="c02a93bdfc71b63eb8c0bb4d-text/javascript">
+                function openMobileMenu() {
+                    document.getElementById("mobile-menu").classList.toggle("hidden");
+                    document.getElementById("clientsNavBar").classList.toggle("hidden");
+                }
+            </script>
+        </div>
+        <div class="w-full justify-between gap-x-10 md:px-5 md:flex hidden" id="mobile-menu">
+            <a href="https://store.hostingkarle.com"
+                class="md:px-2 py-3 flex items-center gap-x-1 hover:text-secondary-800 duration-300">
+                Home
+            </a>
+                        <button type="button" aria-expanded="true" data-dropdown-placement="bottom-start" aria-haspopup="true"
+                data-dropdown-toggle="orders"
+                class="relative md:px-2 py-3 flex items-center gap-x-1 hover:text-secondary-800 duration-300">
+                Shop <i class="ri-arrow-down-s-line"></i>
+
+                <div class="absolute left-0 hidden w-56 mt-2 origin-top-right bg-secondary-200 border border-secondary-300 rounded-md z-10"
+                    role="menu" aria-orientation="vertical" aria-labelledby="product" tabindex="-1" id="orders">
+                                                                        <a href="https://store.hostingkarle.com/hosting"
+                                class="flex px-4 py-2 rounded text-secondary-700 hover:bg-secondary-100 hover:text-secondary-900"
+                                role="menuitem" tabindex="-1" id="menu-item-0">Hosting Plans</a>
+                                                            </div>
+
+            </button>
+            <a href="https://store.hostingkarle.com/announcements"
+                class="md:px-2 py-3 flex items-center gap-x-1 hover:text-secondary-800 duration-300">
+                Announcements
+            </a>
+            <div class="ml-auto flex items-center gap-x-1 justify-center md:pb-0 pb-4">
+                <div wire:snapshot="{&quot;data&quot;:{&quot;cartItems&quot;:0},&quot;memo&quot;:{&quot;id&quot;:&quot;NvSfVrLBGmSLhi70wARU&quot;,&quot;name&quot;:&quot;cart-count&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;},&quot;checksum&quot;:&quot;de4236ecf029b5f4006f7419e717ea938b7fc3544344710b991b0197247661e3&quot;}" wire:effects="{&quot;listeners&quot;:[&quot;updateCart&quot;]}" wire:id="NvSfVrLBGmSLhi70wARU">
+    </div>
+
+                                    <a href="/login.html" class="button button-primary md:flex-none flex-1">
+                        Log In
+                    </a>
+                                <button class="m-1.5 button button-secondary-outline !font-normal" id="theme-toggle">
+                    <i class="ri-sun-line hidden dark:block"></i>
+                    <i class="ri-moon-line dark:hidden"></i>
+                </button>
+                <script type="c02a93bdfc71b63eb8c0bb4d-text/javascript">
+                    // Change the icons inside the button based on previous settings
+                    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia(
+                        '(prefers-color-scheme: dark)').matches));
+
+                    var themeToggleBtn = document.getElementById('theme-toggle');
+                    themeToggleBtn.addEventListener('click', function() {
+                        // if set via local storage previously
+                        if (localStorage.getItem('theme')) {
+                            if (localStorage.getItem('theme') === 'light') {
+                                document.documentElement.classList.add('dark');
+                                localStorage.setItem('theme', 'dark');
+                            } else {
+                                document.documentElement.classList.remove('dark');
+                                localStorage.setItem('theme', 'light');
+                            }
+                            // if NOT set via local storage previously
+                        } else {
+                            if (document.documentElement.classList.contains('dark')) {
+                                document.documentElement.classList.remove('dark');
+                                localStorage.setItem('theme', 'light');
+                            } else {
+                                document.documentElement.classList.add('dark');
+                                localStorage.setItem('theme', 'dark');
+                            }
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</nav>
+                <div class="">
+                        <div class="w-full flex flex-col  min-h-[calc(100vh-64px)] ">
+                
+                <main class="grow">
+                    <div class="content ">
+            <div class="content-box">
+                <div class="prose dark:prose-invert min-w-full">
+                    <center><h1>Welcome to HostingKarle</h1></center><br />
+<h3>IvoniaHosting Menyediakan Layanan Hosting dan Pengembangan yang Menakjubkan dengan Harga Minimal.</h3><br />
+<h3>Jadikan IvoniaHosting Dunia Hosting Anda!</h3><br />
+<h3>Lihat kategori di bawah ini untuk membeli paket!</h3><br />
+<h3>Anda dapat <a href="https://dc.gg/ivoniasmp/">MENGUNJUNGI SERVER DISCORD KAMI</a> untuk mendapatkan Kode Diskon.</h3><br />
+<h2>Nikmati ✅</h2><br />
+<center><img src="" alt=""></center><center><a href="https://www.trustpilot.com/review/hostingkarle.com?utm_medium=trustbox&amp;utm_source=TrustBoxReviewCollector"><img src="https://i.ibb.co/mypWmN7/image.png" width="500" height="200" alt="image.png"></a><center></center></center>
+                </div>
+            </div>
+        </div>
+    
+            <div class="content">
+            <h2 class="font-semibold text-2xl mb-2 text-secondary-900">Categories</h2>
+            <div class="grid grid-cols-12 gap-4">
+
+                                                            <div class="lg:col-span-3 md:col-span-6 col-span-12">
+                            <div class="content-box h-full flex flex-col">
+                                <div class="flex gap-x-3 items-center mb-2">
+                                                                            <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="c02a93bdfc71b63eb8c0bb4d-|49"></script><img src="/storage/categories/uLvWUFj7hHLx9rMRArLGdEDA9mqpYgf1E27JVLoy.png" class="w-14 h-full rounded-md" onerror="removeElement(this);" />
+                                                                        <div>
+                                        <h3 class="font-semibold text-lg">Hosting Plans</h3>
+                                    </div>
+                                </div>
+                                <div class="prose dark:prose-invert"><p>Visit the Entire Hosting Collection on HostingKarle.<br />
+You Make your projects, we host your dreams!</p>
+</div>
+                                <div class="pt-3 mt-auto">
+                                    <a href="https://store.hostingkarle.com/hosting"
+                                    class="button button-secondary w-full">Browse Category</a>
+                                </div>
+                            </div>
+                        </div>
+                                                                                <div class="lg:col-span-3 md:col-span-6 col-span-12">
+                            <div class="content-box h-full flex flex-col">
+                                <div class="flex gap-x-3 items-center mb-2">
+                                                                            <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="c02a93bdfc71b63eb8c0bb4d-|49"></script><img src="/storage/categories/QeCkXZyfx1yNoEtOeCIQn59C8rNEIg8S15yeOrme.svg" class="w-14 h-full rounded-md" onerror="removeElement(this);" />
+                                                                        <div>
+                                        <h3 class="font-semibold text-lg">Minecraft Hosting</h3>
+                                    </div>
+                                </div>
+                                <div class="prose dark:prose-invert"><p>Buy Flashing Fast Game Servers on HostingKarle with 24/7 Live Support and Development Assistance!</p>
+</div>
+                                <div class="pt-3 mt-auto">
+                                    <a href="/mc.html"
+                                    class="button button-secondary w-full">Browse Category</a>
+                                </div>
+                            </div>
+                        </div>
+                                                                                <div class="lg:col-span-3 md:col-span-6 col-span-12">
+                            <div class="content-box h-full flex flex-col">
+                                <div class="flex gap-x-3 items-center mb-2">
+                                                                            <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="c02a93bdfc71b63eb8c0bb4d-|49"></script><img src="/storage/categories/SpA0W24omD7uqhszQhCxAODTDoeZRpAyk0U6mu5e.png" class="w-14 h-full rounded-md" onerror="removeElement(this);" />
+                                                                        <div>
+                                        <h3 class="font-semibold text-lg">Paid Minecraft Servers</h3>
+                                    </div>
+                                </div>
+                                <div class="prose dark:prose-invert"><p>Get the best performing Minecraft Hosting Services on HostingKarle.<br />
+Get Free Development, Domain Setting, Support Services on every Purchase!</p>
+</div>
+                                <div class="pt-3 mt-auto">
+                                    <a href="/mc-paid.html"
+                                    class="button button-secondary w-full">Browse Category</a>
+                                </div>
+                            </div>
+                        </div>
+                                                                                                                                                                                            <div class="lg:col-span-3 md:col-span-6 col-span-12">
+                            <div class="content-box h-full flex flex-col">
+                                <div class="flex gap-x-3 items-center mb-2">
+                                                                            <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="c02a93bdfc71b63eb8c0bb4d-|49"></script><img src="/storage/categories/Rme0zsbHuZd6aBkTAjSu3bXZjWccqUXUa9raq69L.png" class="w-14 h-full rounded-md" onerror="removeElement(this);" />
+                                                                        <div>
+                                        <h3 class="font-semibold text-lg">VPS Hosting</h3>
+                                    </div>
+                                </div>
+                                <div class="prose dark:prose-invert"><p>Buy Extreme Performing VPS on HostingKarle!<br />
+<em>Register on our <a href="https://vps-ivoniahosting.vercel.app">VPS Panel</a> to get your service.</em></p>
+</div>
+                                <div class="pt-3 mt-auto">
+                                    <a href="/vps.html"
+                                    class="button button-secondary w-full">Browse Category</a>
+                                </div>
+                            </div>
+                        </div>
+                                                                                <div class="lg:col-span-3 md:col-span-6 col-span-12">
+                            <div class="content-box h-full flex flex-col">
+                                <div class="flex gap-x-3 items-center mb-2">
+                                                                            <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="c02a93bdfc71b63eb8c0bb4d-|49"></script><img src="/storage/categories/D2p3Fdfi1Zw5Bg76bs6KbPCXOvzZvNV76pxSlpVY.jpg" class="w-14 h-full rounded-md" onerror="removeElement(this);" />
+                                                                        <div>
+                                        <h3 class="font-semibold text-lg">German Hosted VPS</h3>
+                                    </div>
+                                </div>
+                                <div class="prose dark:prose-invert"><p>Well performing VPS hosted in Germany<br />
+&gt; <strong>These can be converted to Windows RDP Servers</strong></p><br />
+<p>&gt; <strong>Good for Website Hosting, Data Processing, Hosting, Daily Use Etc.</strong></p>
+</div>
+                                <div class="pt-3 mt-auto">
+                                    <a href="/vps-german.html"
+                                    class="button button-secondary w-full">Browse Category</a>
+                                </div>
+                            </div>
+                        </div>
+                                                                                                                                                                                                </div>
+        </div>
+    
+            <div class="content">
+            <h2 class="font-semibold text-2xl mb-2 text-secondary-900">Announcements</h2>
+            <div class="grid grid-cols-12 gap-4">
+                                    <div class="lg:col-span-4 md:col-span-6 col-span-12">
+                        <div class="content-box">
+                            <h3 class="font-semibold text-lg">Christmas Sale Activated!</h3>
+                            <div class="prose dark:prose-invert"><h3>Get this Christmas celebrated with HostingKarle!</h3><br />
+<h4>Get upto 40% Off on Servers and 60% off...</h4>
+</div>
+                            <div class="flex justify-between items-center mt-3">
+                                <span class="text-sm text-secondary-600">Published
+                                    2 months ago</span>
+                                <a href="/announcements/2.html"
+                                    class="button button-secondary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+                </main>
+
+                <footer class="pt-5 pb-3 mt-auto">
+    <div class="text-sm text-center content text-secondary-600">
+        <a href="https://paymenter.org" target="_blank">
+            Paymenter &copy; 2022 - 2025
+        </a>
+    </div>
+</footer>
+            </div>
+        </div>
+    </div>
+<script src="/livewire/livewire.min.js?id=13b7c601" data-csrf="pVyh44gLOnZ9AY1Ol8lisG3dOr8hfpj2oYRwh4qM" data-update-uri="/paymenter/live/update" data-navigate-once="true" type="c02a93bdfc71b63eb8c0bb4d-text/javascript"></script>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="c02a93bdfc71b63eb8c0bb4d-|49" defer></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"923d3447596b2f6e","version":"2025.1.0","r":1,"token":"b646031c359a46a4992b5e5f857227a2","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
 </body>
+
 </html>
