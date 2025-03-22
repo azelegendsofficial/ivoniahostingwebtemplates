@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Daftar untuk MineCraft Hosting Gratis dengan performa tinggi dan dukungan 24/7">
-    <title>Daftar - IvoniaHosting</title>
+    <title>Daftar - MineCraft Hosting Gratis</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -457,6 +457,96 @@
             font-size: 0.9rem;
         }
         
+        /* Loading spinner */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        
+        .loading-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        .loading-text {
+            color: white;
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: white;
+            color: var(--dark);
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+        
+        .toast.success {
+            border-left: 4px solid var(--primary);
+        }
+        
+        .toast.error {
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .toast-icon {
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .toast-message {
+            flex: 1;
+        }
+        
+        .toast-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--gray);
+            padding: 0 5px;
+        }
+        
         /* Responsive design improvements */
         @media screen and (max-width: 991px) {
             .registration-container {
@@ -552,10 +642,10 @@
                 </div>
                 <div class="registration-form">
                     <h3>Daftar Gratis</h3>
-                    <form action="#" method="POST">
+                    <form id="registerForm">
                         <div class="form-group">
-                            <label for="nama">Nama Lengkap</label>
-                            <input type="text" id="nama" name="nama" required>
+                            <label for="namaLengkap">Nama Lengkap</label>
+                            <input type="text" id="namaLengkap" name="namaLengkap" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
@@ -567,12 +657,12 @@
                             <p class="hint">Minimal 8 karakter dengan huruf dan angka</p>
                         </div>
                         <div class="form-group">
-                            <label for="server-name">Nama Server</label>
-                            <input type="text" id="server-name" name="server-name" required>
+                            <label for="serverName">Nama Server</label>
+                            <input type="text" id="serverName" name="serverName" required>
                         </div>
                         <div class="form-group">
-                            <label for="server-type">Tipe Server</label>
-                            <select id="server-type" name="server-type" required>
+                            <label for="serverType">Tipe Server</label>
+                            <select id="serverType" name="serverType" required>
                                 <option value="">-- Pilih Tipe Server --</option>
                                 <option value="vanilla">Vanilla</option>
                                 <option value="spigot">Spigot</option>
@@ -585,7 +675,7 @@
                             <input type="checkbox" id="terms" name="terms" required>
                             <label for="terms">Saya menyetujui <a href="#">Syarat & Ketentuan</a> dan <a href="#">Kebijakan Privasi</a>.</label>
                         </div>
-                        <button type="submit" class="btn">Buat Server Sekarang</button>
+                        <button type="submit" class="btn" id="submitBtn">Buat Server Sekarang</button>
                         <div class="divider">
                             <span>ATAU</span>
                         </div>
@@ -613,10 +703,10 @@
                     <h3>Starter</h3>
                     <p>Cocok untuk server kecil dengan maksimal 10 pemain.</p>
                     <ul>
-                        <li>2GB RAM</li>
-                        <li>10GB SSD</li>
-                        <li>1 vCPU</li>
-                        <li>Dukungan Email</li>
+                        <li>8GB RAM</li>
+                        <li>24GB SSD</li>
+                        <li>5 vCPU</li>
+                        <li>Dukungan 24/7</li>
                     </ul>
                 </div>
                 <div class="server-option">
@@ -624,9 +714,9 @@
                     <h3>Adventure</h3>
                     <p>Ideal untuk server menengah dengan maksimal 20 pemain.</p>
                     <ul>
-                        <li>4GB RAM</li>
-                        <li>20GB SSD</li>
-                        <li>2 vCPU</li>
+                        <li>12GB RAM</li>
+                        <li>33GB SSD</li>
+                        <li>7 vCPU</li>
                         <li>Dukungan 24/7</li>
                     </ul>
                     <p><small>Gratis setelah 15 teman bergabung</small></p>
@@ -636,16 +726,31 @@
                     <h3>Pro</h3>
                     <p>Performa terbaik untuk server besar dengan banyak plugins.</p>
                     <ul>
-                        <li>8GB RAM</li>
+                        <li>32GB RAM</li>
                         <li>50GB SSD</li>
-                        <li>4 vCPU</li>
-                        <li>Dukungan Premium</li>
+                        <li>9 vCPU</li>
+                        <li>Dukungan 24/7</li>
                     </ul>
                     <p><small>Gratis setelah 30 teman bergabung</small></p>
                 </div>
             </div>
         </div>
     </section>
+    
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <div class="loading-text">Membuat server Anda...</div>
+        </div>
+    </div>
+    
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-icon">✓</div>
+        <div class="toast-message" id="toastMessage">Pendaftaran berhasil</div>
+        <button class="toast-close" id="toastClose">×</button>
+    </div>
     
     <!-- Footer Section -->
     <footer>
@@ -684,5 +789,98 @@
             </div>
         </div>
     </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const registerForm = document.getElementById('registerForm');
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastClose = document.getElementById('toastClose');
+            const panelUrl = 'https://glorious-apt-sturgeon.ngrok-free.app';
+
+            // Function to show loading overlay
+            function showLoading() {
+                loadingOverlay.classList.add('active');
+            }
+
+            // Function to hide loading overlay
+            function hideLoading() {
+                loadingOverlay.classList.remove('active');
+            }
+
+            // Function to show toast notification
+            function showToast(message, type = 'success') {
+                toastMessage.textContent = message;
+                toast.className = 'toast show ' + type;
+                
+                // Hide toast after 5 seconds
+                setTimeout(() => {
+                    hideToast();
+                }, 5000);
+            }
+
+            // Function to hide toast notification
+            function hideToast() {
+                toast.classList.remove('show');
+            }
+
+            // Close toast when clicking the close button
+            toastClose.addEventListener('click', hideToast);
+
+            // Handle form submission
+            registerForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // Basic form validation
+                const namaLengkap = document.getElementById('namaLengkap').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const password = document.getElementById('password').value;
+                const serverName = document.getElementById('serverName').value.trim();
+                const serverType = document.getElementById('serverType').value;
+                const terms = document.getElementById('terms').checked;
+                
+                if (!namaLengkap || !email || !password || !serverName || !serverType || !terms) {
+                    showToast('Silakan lengkapi semua field yang diperlukan.', 'error');
+                    return;
+                }
+                
+                // Password validation (at least 8 characters with letters and numbers)
+                if (password.length < 8 || !/[a-zA-Z]/.test(password) || !/[0-9]/.test(password)) {
+                    showToast('Password harus minimal 8 karakter dengan huruf dan angka.', 'error');
+                    return;
+                }
+                
+                // Show loading
+                showLoading();
+                
+                // Save user data to localStorage (for use on the panel page)
+                const userData = {
+                    namaLengkap,
+                    email,
+                    password,
+                    serverName,
+                    serverType,
+                    registrationDate: new Date().toISOString()
+                };
+                
+                localStorage.setItem('minecraftHostingUser', JSON.stringify(userData));
+                
+                // Simulate server processing (2 second delay)
+                setTimeout(() => {
+                    // Hide loading
+                    hideLoading();
+                    
+                    // Show success message
+                    showToast('Pendaftaran berhasil! Mengalihkan ke panel kontrol...');
+                    
+                    // Redirect to panel after 1.5 seconds
+                    setTimeout(() => {
+                        window.location.href = panelUrl;
+                    }, 1500);
+                }, 2000);
+            });
+        });
+    </script>
 </body>
 </html>
