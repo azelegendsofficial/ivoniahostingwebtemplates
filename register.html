@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Daftar untuk MineCraft Hosting Gratis dengan performa tinggi dan dukungan 24/7">
+    <title>Daftar - IvoniaHosting</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2ecc71;
+            --primary-dark: #27ae60;
+            --secondary: #3498db;
+            --dark: #1a2530;
+            --light: #f8f9fa;
+            --gray: #95a5a6;
+            --shadow: 0 5px 20px rgba(0,0,0,0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        header {
+            background-image: linear-gradient(135deg, rgba(17, 51, 83, 0.9) 0%, rgba(41, 128, 185, 0.8) 100%), url('/api/placeholder/1920/600');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+            position: relative;
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top right, var(--light) 49%, transparent 51%);
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease;
+        }
+        
+        header p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.3s forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 100px 20px;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            position: relative;
+            padding-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .registration-container {
+            display: flex;
+            align-items: stretch;
+            box-shadow: var(--shadow);
+            border-radius: 15px;
+            overflow: hidden;
+            background-color: white;
+            margin-bottom: 50px;
+        }
+        
+        .registration-info {
+            flex: 1;
+            background-image: linear-gradient(135deg, rgba(46, 204, 113, 0.9) 0%, rgba(52, 152, 219, 0.9) 100%), url('/api/placeholder/600/800');
+            background-size: cover;
+            background-position: center;
+            padding: 50px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .registration-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .info-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .info-feature i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+        
+        .registration-form {
+            flex: 1;
+            padding: 50px;
+        }
+        
+        .registration-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+            outline: none;
+        }
+        
+        .form-group .hint {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 5px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .checkbox-group input {
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background-color: var(--primary-dark);
+            transition: var(--transition);
+            z-index: -1;
+            border-radius: 50px;
+        }
+        
+        .btn:hover {
+            box-shadow: 0 7px 20px rgba(46, 204, 113, 0.6);
+            transform: translateY(-3px);
+        }
+        
+        .btn:hover::before {
+            width: 100%;
+        }
+        
+        .divider {
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: #ddd;
+            z-index: 1;
+        }
+        
+        .divider span {
+            background-color: white;
+            padding: 0 15px;
+            position: relative;
+            z-index: 2;
+            color: var(--gray);
+        }
+        
+        .social-login {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-btn {
+            flex: 1;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background-color: white;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .social-btn:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .login-link {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--gray);
+        }
+        
+        .login-link a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .login-link a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        
+        .server-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .server-option {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .server-option:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .server-option img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+        
+        .server-option h3 {
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .server-option p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 20px 30px;
+            position: relative;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
+        }
+        
+        .footer-links a {
+            display: block;
+            color: var(--gray);
+            margin-bottom: 12px;
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .footer-links a::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+        
+        .footer-links a:hover::before {
+            transform: translateX(3px);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            color: var(--gray);
+        }
+        
+        .contact-item i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            margin-top: 50px;
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive design improvements */
+        @media screen and (max-width: 991px) {
+            .registration-container {
+                flex-direction: column;
+            }
+            
+            .registration-info,
+            .registration-form {
+                padding: 40px;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            header {
+                padding: 100px 20px;
+            }
+            
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            section {
+                padding: 70px 20px;
+            }
+            
+            .social-login {
+                flex-direction: column;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .registration-info,
+            .registration-form {
+                padding: 30px 20px;
+            }
+            
+            .btn {
+                padding: 14px 28px;
+                font-size: 1rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Buat Server Minecraft Anda</h1>
+        <p>Lengkapi formulir pendaftaran untuk mulai menggunakan layanan hosting Minecraft gratis kami</p>
+    </header>
+    
+    <!-- Registration Section -->
+    <section id="registration">
+        <div class="container">
+            <div class="registration-container">
+                <div class="registration-info">
+                    <h3>Keuntungan Hosting Kami</h3>
+                    <div class="info-feature">
+                        <i>🚀</i>
+                        <div>
+                            <h4>Performa Tinggi</h4>
+                            <p>Server Anda dijamin berjalan dengan lancar tanpa lag.</p>
+                        </div>
+                    </div>
+                    <div class="info-feature">
+                        <i>🔒</i>
+                        <div>
+                            <h4>Keamanan Premium</h4>
+                            <p>Perlindungan DDoS dan backup otomatis tanpa biaya tambahan.</p>
+                        </div>
+                    </div>
+                    <div class="info-feature">
+                        <i>⚙️</i>
+                        <div>
+                            <h4>Panel Kontrol Lengkap</h4>
+                            <p>Kelola server Anda dengan mudah melalui panel kontrol intuitif.</p>
+                        </div>
+                    </div>
+                    <div class="info-feature">
+                        <i>👨‍💻</i>
+                        <div>
+                            <h4>Dukungan 24/7</h4>
+                            <p>Tim teknis kami siap membantu Anda kapan saja.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="registration-form">
+                    <h3>Daftar Gratis</h3>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap</label>
+                            <input type="text" id="nama" name="nama" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required>
+                            <p class="hint">Minimal 8 karakter dengan huruf dan angka</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="server-name">Nama Server</label>
+                            <input type="text" id="server-name" name="server-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="server-type">Tipe Server</label>
+                            <select id="server-type" name="server-type" required>
+                                <option value="">-- Pilih Tipe Server --</option>
+                                <option value="vanilla">Vanilla</option>
+                                <option value="spigot">Spigot</option>
+                                <option value="paper">Paper</option>
+                                <option value="forge">Forge</option>
+                                <option value="bukkit">Bukkit</option>
+                            </select>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">Saya menyetujui <a href="#">Syarat & Ketentuan</a> dan <a href="#">Kebijakan Privasi</a>.</label>
+                        </div>
+                        <button type="submit" class="btn">Buat Server Sekarang</button>
+                        <div class="divider">
+                            <span>ATAU</span>
+                        </div>
+                        <div class="social-login">
+                            <button type="button" class="social-btn">
+                                <span>🔵</span> Login dengan Facebook
+                            </button>
+                            <button type="button" class="social-btn">
+                                <span>🔴</span> Login dengan Google
+                            </button>
+                        </div>
+                        <div class="login-link">
+                            <p>Sudah memiliki akun? <a href="login.html">Login di sini</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="section-title">
+                <h2>Pilih Paket Gratis Anda</h2>
+            </div>
+            <div class="server-options">
+                <div class="server-option">
+                    <img src="/api/placeholder/80/80" alt="Starter">
+                    <h3>Starter</h3>
+                    <p>Cocok untuk server kecil dengan maksimal 10 pemain.</p>
+                    <ul>
+                        <li>2GB RAM</li>
+                        <li>10GB SSD</li>
+                        <li>1 vCPU</li>
+                        <li>Dukungan Email</li>
+                    </ul>
+                </div>
+                <div class="server-option">
+                    <img src="/api/placeholder/80/80" alt="Adventure">
+                    <h3>Adventure</h3>
+                    <p>Ideal untuk server menengah dengan maksimal 20 pemain.</p>
+                    <ul>
+                        <li>4GB RAM</li>
+                        <li>20GB SSD</li>
+                        <li>2 vCPU</li>
+                        <li>Dukungan 24/7</li>
+                    </ul>
+                    <p><small>Gratis setelah 15 teman bergabung</small></p>
+                </div>
+                <div class="server-option">
+                    <img src="/api/placeholder/80/80" alt="Pro">
+                    <h3>Pro</h3>
+                    <p>Performa terbaik untuk server besar dengan banyak plugins.</p>
+                    <ul>
+                        <li>8GB RAM</li>
+                        <li>50GB SSD</li>
+                        <li>4 vCPU</li>
+                        <li>Dukungan Premium</li>
+                    </ul>
+                    <p><small>Gratis setelah 30 teman bergabung</small></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MineCraft Hosting Gratis</h3>
+                    <p>Kami berdedikasi untuk menyediakan layanan hosting Minecraft gratis berkualitas tinggi untuk semua pemain.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Tautan Cepat</h3>
+                    <div class="footer-links">
+                        <a href="index.html">Beranda</a>
+                        <a href="index.html#about">Tentang Hosting</a>
+                        <a href="index.html#performance">Performa</a>
+                        <a href="#">FAQ</a>
+                        <a href="#">Kontak</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Hubungi Kami</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i>📧</i>
+                            <p>Email: support@minecrafthosting.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <i>💬</i>
+                            <p>Discord: discord.gg/minecrafthosting</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Minecraft Hosting Gratis. Semua Hak Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
