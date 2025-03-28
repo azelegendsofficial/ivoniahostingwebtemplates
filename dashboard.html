@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IvoniaHosting - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a1128, #121b34);
+            color: #e6e6e6;
+        }
+        .sidebar {
+            background-color: #121b34;
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            overflow-y: auto;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        .dropdown {
+            display: none;
+        }
+        .dropdown.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex">
+    <!-- Sidebar -->
+    <div class="sidebar p-4 text-white">
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-[#00ffab]">IvoniaHosting</h2>
+        </div>
+
+        <!-- Main Navigation -->
+        <div class="space-y-2">
+            <h3 class="text-gray-400 uppercase text-xs mb-2">Main</h3>
+            <div class="sidebar-item cursor-pointer hover:bg-gray-700 p-2 rounded">
+                <span>Home</span>
+            </div>
+            <div class="sidebar-item cursor-pointer hover:bg-gray-700 p-2 rounded">
+                <span>Dashboard</span>
+            </div>
+            <div class="sidebar-item cursor-pointer hover:bg-gray-700 p-2 rounded">
+                <span>Create A Server</span>
+            </div>
+            
+            <!-- Earn Dropdown -->
+            <div class="relative">
+                <div id="earn-toggle" class="sidebar-item cursor-pointer hover:bg-gray-700 p-2 rounded flex justify-between items-center">
+                    <span>Earn</span>
+                    <svg id="earn-dropdown-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div id="earn-dropdown" class="dropdown bg-gray-800 rounded mt-2">
+                    <div class="p-2 hover:bg-gray-700">AFK</div>
+                    <div class="p-2 hover:bg-gray-700">Redeem</div>
+                </div>
+            </div>
+
+            <div class="sidebar-item cursor-pointer hover:bg-gray-700 p-2 rounded">
+                <span>Shop</span>
+            </div>
+
+            <!-- Help Center Dropdown -->
+            <div class="relative">
+                <div id="help-toggle" class="sidebar-item cursor-pointer hover:bg-gray-700 p-2 rounded flex justify-between items-center">
+                    <span>Help-Center</span>
+                    <svg id="help-dropdown-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div id="help-dropdown" class="dropdown bg-gray-800 rounded mt-2">
+                    <div class="p-2 hover:bg-gray-700">Home</div>
+                    <div class="p-2 hover:bg-gray-700">Ticket</div>
+                    <div class="p-2 hover:bg-gray-700">Terms of Service</div>
+                    <div class="p-2 hover:bg-gray-700">Privacy Policy</div>
+                </div>
+            </div>
+
+            <div class="sidebar-item cursor-pointer hover:bg-gray-700 p-2 rounded">
+                <span>Leaderboard</span>
+            </div>
+            <div class="sidebar-item cursor-pointer hover:bg-gray-700 p-2 rounded">
+                <span>Users</span>
+            </div>
+        </div>
+
+        <!-- Links Section -->
+        <div class="mt-8">
+            <h3 class="text-gray-400 uppercase text-xs mb-2">Links</h3>
+            <div class="sidebar-item cursor-pointer hover:bg-gray-700 p-2 rounded">
+                <span>Pterodactyl Panel</span>
+            </div>
+            <div class="sidebar-item cursor-pointer hover:bg-gray-700 p-2 rounded">
+                <span>Discord Server</span>
+            </div>
+            <div class="sidebar-item cursor-pointer hover:bg-gray-700 p-2 rounded">
+                <span>Status Page</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content flex-1 bg-gradient-to-br from-[#0a1128] to-[#121b34] min-h-screen">
+        <div class="container mx-auto px-4 py-12">
+            <h1 class="text-4xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-white to-[#00ffab]">
+                HostMC Dashboard
+            </h1>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-[#121b34] p-6 rounded-lg">
+                    <h2 class="text-2xl font-semibold mb-4">Minecraft Servers</h2>
+                    <p class="text-[#00ffab]">0 Active Servers</p>
+                </div>
+                
+                <div class="bg-[#121b34] p-6 rounded-lg">
+                    <h2 class="text-2xl font-semibold mb-4">Account Details</h2>
+                    <p id="usernameDisplay"></p>
+                </div>
+                
+                <div class="bg-[#121b34] p-6 rounded-lg">
+                    <h2 class="text-2xl font-semibold mb-4">Quick Actions</h2>
+                    <button onclick="logout()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dropdown Toggle for Earn
+        document.getElementById('earn-toggle').addEventListener('click', function() {
+            const dropdown = document.getElementById('earn-dropdown');
+            const icon = document.getElementById('earn-dropdown-icon');
+            dropdown.classList.toggle('active');
+            icon.classList.toggle('rotate-180');
+        });
+
+        // Dropdown Toggle for Help Center
+        document.getElementById('help-toggle').addEventListener('click', function() {
+            const dropdown = document.getElementById('help-dropdown');
+            const icon = document.getElementById('help-dropdown-icon');
+            dropdown.classList.toggle('active');
+            icon.classList.toggle('rotate-180');
+        });
+
+        // Fungsi untuk mendapatkan username dari login
+        function getUsernameFromLogin() {
+            // Dalam implementasi nyata, ini bisa dari session atau token
+            const username = localStorage.getItem('currentUser');
+            if (username) {
+                document.getElementById('usernameDisplay').textContent = `Username: ${username}`;
+            } else {
+                // Redirect ke halaman login jika tidak ada user
+                window.location.href = '/login.html';
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('currentUser');
+            window.location.href = '/login.html';
+        }
+
+        // Panggil fungsi saat halaman dimuat
+        getUsernameFromLogin();
+    </script>
+</body>
+</html>
