@@ -137,43 +137,5 @@
             </div>
         </div>
     </div>
-
-    <script>
-        // Dropdown Toggle for Earn
-        document.getElementById('earn-toggle').addEventListener('click', function() {
-            const dropdown = document.getElementById('earn-dropdown');
-            const icon = document.getElementById('earn-dropdown-icon');
-            dropdown.classList.toggle('active');
-            icon.classList.toggle('rotate-180');
-        });
-
-        // Dropdown Toggle for Help Center
-        document.getElementById('help-toggle').addEventListener('click', function() {
-            const dropdown = document.getElementById('help-dropdown');
-            const icon = document.getElementById('help-dropdown-icon');
-            dropdown.classList.toggle('active');
-            icon.classList.toggle('rotate-180');
-        });
-
-        // Fungsi untuk mendapatkan username dari login
-        function getUsernameFromLogin() {
-            // Dalam implementasi nyata, ini bisa dari session atau token
-            const username = localStorage.getItem('currentUser');
-            if (username) {
-                document.getElementById('usernameDisplay').textContent = `Username: ${username}`;
-            } else {
-                // Redirect ke halaman login jika tidak ada user
-                window.location.href = '/auth/login.html';
-            }
-        }
-
-        function logout() {
-            localStorage.removeItem('currentUser');
-            window.location.href = '/auth/login.html';
-        }
-
-        // Panggil fungsi saat halaman dimuat
-        getUsernameFromLogin();
-    </script>
 </body>
 </html>
