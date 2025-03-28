@@ -163,13 +163,13 @@
                 document.getElementById('usernameDisplay').textContent = `Username: ${username}`;
             } else {
                 // Redirect ke halaman login jika tidak ada user
-                window.location.href = '/login.html';
+                window.location.href = '/auth/login.html';
             }
         }
 
         function logout() {
             localStorage.removeItem('currentUser');
-            window.location.href = '/login.html';
+            window.location.href = '/auth/login.html';
         }
 
         // Panggil fungsi saat halaman dimuat
