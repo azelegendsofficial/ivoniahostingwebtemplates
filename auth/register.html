@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IvoniaHosting - Authentication</title>
+    <title>IvoniaHosting - Registration</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -23,7 +23,7 @@
 <body class="min-h-screen flex items-center justify-center">
     <div class="container max-w-md w-full px-4">
         <!-- Registration Form -->
-        <div id="registerForm" class="glass-card p-8 rounded-lg">
+        <div class="glass-card p-8 rounded-lg">
             <h2 class="text-3xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-[#00ffab]">
                 Create Your Account
             </h2>
@@ -46,23 +46,9 @@
                     class="w-full bg-[#00ffab] text-black font-bold py-3 rounded-lg hover:bg-[#00ffab]/90 transition">
                     Register
                 </button>
-            </form>
-        </div>
-
-        <!-- Login Form -->
-        <div id="loginForm" class="glass-card p-8 rounded-lg">
-            <h2 class="text-3xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-[#00ffab]">
-                Login to IvoniaHosting
-            </h2>
-            <form id="loginFormSubmit">
-                <input type="text" id="loginUsername" placeholder="Username" required 
-                    class="w-full mb-4 bg-[#121b34] border border-white/10 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00ffab]">
-                <input type="password" id="loginPassword" placeholder="Password" required 
-                    class="w-full mb-4 bg-[#121b34] border border-white/10 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00ffab]">
-                <button type="submit" 
-                    class="w-full bg-[#00ffab] text-black font-bold py-3 rounded-lg hover:bg-[#00ffab]/90 transition">
-                    Login
-                </button>
+                <div class="text-center mt-4">
+                    <a href="login.html" class="text-[#00ffab] hover:underline">Already have an account? Login</a>
+                </div>
             </form>
         </div>
     </div>
@@ -101,7 +87,7 @@
             .then(data => {
                 if (data.success) {
                     alert('Registrasi berhasil!');
-                    // Redirect atau tampilkan form login
+                    window.location.href = 'login.html';
                 } else {
                     alert('Registrasi gagal: ' + data.message);
                 }
@@ -109,35 +95,6 @@
             .catch(error => {
                 console.error('Error:', error);
                 alert('Terjadi kesalahan saat registrasi');
-            });
-        });
-
-        document.getElementById('loginFormSubmit').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const username = document.getElementById('loginUsername').value;
-            const password = document.getElementById('loginPassword').value;
-
-            // Kirim data login ke backend
-            fetch('/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ username, password })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    // Redirect ke dashboard
-                    window.location.href = '/dashboard.html';
-                } else {
-                    alert('User Dan Password Salah');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Terjadi kesalahan saat login');
             });
         });
     </script>
