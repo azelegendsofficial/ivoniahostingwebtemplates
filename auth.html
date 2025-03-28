@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IvoniaHosting - Authentication</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a1128, #121b34);
+            color: #e6e6e6;
+        }
+        .glass-card {
+            background: rgba(18, 27, 52, 0.6);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center">
+    <div class="container max-w-md w-full px-4">
+        <!-- Registration Form -->
+        <div id="registerForm" class="glass-card p-8 rounded-lg">
+            <h2 class="text-3xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-[#00ffab]">
+                Create Your Account
+            </h2>
+            <form id="registrationForm">
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <input type="text" id="firstName" placeholder="First Name" required 
+                        class="w-full bg-[#121b34] border border-white/10 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00ffab]">
+                    <input type="text" id="lastName" placeholder="Last Name" required 
+                        class="w-full bg-[#121b34] border border-white/10 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00ffab]">
+                </div>
+                <input type="text" id="username" placeholder="Username" required 
+                    class="w-full mb-4 bg-[#121b34] border border-white/10 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00ffab]">
+                <input type="email" id="email" placeholder="Email Address" required 
+                    class="w-full mb-4 bg-[#121b34] border border-white/10 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00ffab]">
+                <input type="password" id="password" placeholder="Password" required 
+                    class="w-full mb-4 bg-[#121b34] border border-white/10 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00ffab]">
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" required 
+                    class="w-full mb-4 bg-[#121b34] border border-white/10 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00ffab]">
+                <button type="submit" 
+                    class="w-full bg-[#00ffab] text-black font-bold py-3 rounded-lg hover:bg-[#00ffab]/90 transition">
+                    Register
+                </button>
+            </form>
+        </div>
+
+        <!-- Login Form -->
+        <div id="loginForm" class="glass-card p-8 rounded-lg">
+            <h2 class="text-3xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-[#00ffab]">
+                Login to IvoniaHosting
+            </h2>
+            <form id="loginFormSubmit">
+                <input type="text" id="loginUsername" placeholder="Username" required 
+                    class="w-full mb-4 bg-[#121b34] border border-white/10 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00ffab]">
+                <input type="password" id="loginPassword" placeholder="Password" required 
+                    class="w-full mb-4 bg-[#121b34] border border-white/10 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00ffab]">
+                <button type="submit" 
+                    class="w-full bg-[#00ffab] text-black font-bold py-3 rounded-lg hover:bg-[#00ffab]/90 transition">
+                    Login
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validasi password
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                alert('Password tidak cocok!');
+                return;
+            }
+
+            // Data registrasi
+            const registrationData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                username: document.getElementById('username').value,
+                email: document.getElementById('email').value,
+                password: password
+            };
+
+            // Kirim data ke backend untuk disimpan di file
+            fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(registrationData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Registrasi berhasil!');
+                    // Redirect atau tampilkan form login
+                } else {
+                    alert('Registrasi gagal: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Terjadi kesalahan saat registrasi');
+            });
+        });
+
+        document.getElementById('loginFormSubmit').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+
+            // Kirim data login ke backend
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Redirect ke dashboard
+                    window.location.href = '/dashboard.html';
+                } else {
+                    alert('User Dan Password Salah');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Terjadi kesalahan saat login');
+            });
+        });
+    </script>
+</body>
+</html>
