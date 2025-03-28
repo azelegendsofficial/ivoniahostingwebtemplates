@@ -6,136 +6,206 @@
     <title>IvoniaHosting - Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #0a1128, #121b34);
-            color: #e6e6e6;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #e2e8f0;
         }
         .sidebar {
-            background-color: #121b34;
-            width: 250px;
-            height: 100vh;
-            position: fixed;
-            left: 0;
-            top: 0;
-            overflow-y: auto;
+            background-color: #1e293b;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .content {
-            margin-left: 250px;
-            padding: 20px;
+        .nav-item {
+            transition: all 0.3s ease;
         }
-        .dropdown {
-            display: none;
-        }
-        .dropdown.active {
-            display: block;
+        .nav-item:hover {
+            transform: translateX(5px);
+            background-color: rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
-<body class="min-h-screen flex">
+<body 
+    x-data="{ 
+        mobileMenuOpen: false, 
+        activeDropdowns: {
+            earn: false,
+            helpCenter: false
+        },
+        toggleDropdown(dropdown) {
+            this.activeDropdowns[dropdown] = !this.activeDropdowns[dropdown];
+            Object.keys(this.activeDropdowns).forEach(key => {
+                if (key !== dropdown) this.activeDropdowns[key] = false;
+            });
+        }
+    }" 
+    class="min-h-screen flex bg-slate-900 text-slate-200">
+    
+    <!-- Mobile Menu Toggle -->
+    <button 
+        @click="mobileMenuOpen = !mobileMenuOpen" 
+        class="fixed z-50 top-4 right-4 md:hidden bg-slate-700 p-2 rounded-lg"
+    >
+        <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg x-show="mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+    </button>
+
     <!-- Sidebar -->
-    <div class="sidebar p-4 text-white">
-        <div class="mb-8">
-            <h2 class="text-2xl font-bold text-[#00ffab]">IvoniaHosting</h2>
+    <div 
+        :class="{'hidden md:block': !mobileMenuOpen, 'block': mobileMenuOpen}"
+        class="fixed inset-y-0 left-0 w-64 sidebar p-6 overflow-y-auto z-40 transform md:translate-x-0 transition-transform"
+    >
+        <div class="mb-10">
+            <h2 class="text-3xl font-bold text-emerald-400">IvoniaHosting</h2>
         </div>
 
-        <!-- Main Navigation -->
-        <div class="space-y-2">
-            <h3 class="text-gray-400 uppercase text-xs mb-2">Main</h3>
-            <div class="sidebar-item cursor-pointer hover:bg-gray-700 p-2 rounded">
+        <nav class="space-y-2">
+            <h3 class="text-xs uppercase text-slate-500 mb-2">Main</h3>
+            
+            <div class="nav-item p-2 rounded-lg cursor-pointer flex items-center space-x-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                </svg>
                 <span>Home</span>
             </div>
-            <div class="sidebar-item cursor-pointer hover:bg-gray-700 p-2 rounded">
+
+            <div class="nav-item p-2 rounded-lg cursor-pointer flex items-center space-x-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"></path>
+                </svg>
                 <span>Dashboard</span>
             </div>
-            <div class="sidebar-item cursor-pointer hover:bg-gray-700 p-2 rounded">
+
+            <div class="nav-item p-2 rounded-lg cursor-pointer flex items-center space-x-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                </svg>
                 <span>Create A Server</span>
             </div>
-            
+
             <!-- Earn Dropdown -->
             <div class="relative">
-                <div id="earn-toggle" class="sidebar-item cursor-pointer hover:bg-gray-700 p-2 rounded flex justify-between items-center">
-                    <span>Earn</span>
-                    <svg id="earn-dropdown-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <div 
+                    @click="toggleDropdown('earn')" 
+                    class="nav-item p-2 rounded-lg cursor-pointer flex items-center justify-between"
+                >
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span>Earn</span>
+                    </div>
+                    <svg 
+                        :class="{'rotate-180': activeDropdowns.earn}" 
+                        class="w-4 h-4 transition-transform" 
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    >
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </div>
-                <div id="earn-dropdown" class="dropdown bg-gray-800 rounded mt-2">
-                    <div class="p-2 hover:bg-gray-700">AFK</div>
-                    <div class="p-2 hover:bg-gray-700">Redeem</div>
+                <div 
+                    x-show="activeDropdowns.earn" 
+                    x-transition 
+                    class="bg-slate-800 rounded-lg mt-2 overflow-hidden"
+                >
+                    <div class="p-2 hover:bg-slate-700 cursor-pointer">AFK</div>
+                    <div class="p-2 hover:bg-slate-700 cursor-pointer">Redeem</div>
                 </div>
             </div>
 
-            <div class="sidebar-item cursor-pointer hover:bg-gray-700 p-2 rounded">
-                <span>Shop</span>
-            </div>
-
-            <!-- Help Center Dropdown -->
+            <!-- Support Dropdown -->
             <div class="relative">
-                <div id="help-toggle" class="sidebar-item cursor-pointer hover:bg-gray-700 p-2 rounded flex justify-between items-center">
-                    <span>Help-Center</span>
-                    <svg id="help-dropdown-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <div 
+                    @click="toggleDropdown('helpCenter')" 
+                    class="nav-item p-2 rounded-lg cursor-pointer flex items-center justify-between"
+                >
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 3.536l-3.536 3.536m8.486-8.486a3 3 0 104.243 4.243 3 3 0 00-4.243-4.243zm-3.536 9.9a3 3 0 11-4.243-4.243 3 3 0 014.243 4.242z"></path>
+                        </svg>
+                        <span>Support</span>
+                    </div>
+                    <svg 
+                        :class="{'rotate-180': activeDropdowns.helpCenter}" 
+                        class="w-4 h-4 transition-transform" 
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    >
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </div>
-                <div id="help-dropdown" class="dropdown bg-gray-800 rounded mt-2">
-                    <div class="p-2 hover:bg-gray-700">Home</div>
-                    <div class="p-2 hover:bg-gray-700">Ticket</div>
-                    <div class="p-2 hover:bg-gray-700">Terms of Service</div>
-                    <div class="p-2 hover:bg-gray-700">Privacy Policy</div>
+                <div 
+                    x-show="activeDropdowns.helpCenter" 
+                    x-transition 
+                    class="bg-slate-800 rounded-lg mt-2 overflow-hidden"
+                >
+                    <div class="p-2 hover:bg-slate-700 cursor-pointer">Open Ticket</div>
+                    <div class="p-2 hover:bg-slate-700 cursor-pointer">FAQ</div>
+                    <div class="p-2 hover:bg-slate-700 cursor-pointer">Contact Us</div>
                 </div>
             </div>
-
-            <div class="sidebar-item cursor-pointer hover:bg-gray-700 p-2 rounded">
-                <span>Leaderboard</span>
-            </div>
-            <div class="sidebar-item cursor-pointer hover:bg-gray-700 p-2 rounded">
-                <span>Users</span>
-            </div>
-        </div>
-
-        <!-- Links Section -->
-        <div class="mt-8">
-            <h3 class="text-gray-400 uppercase text-xs mb-2">Links</h3>
-            <div class="sidebar-item cursor-pointer hover:bg-gray-700 p-2 rounded">
-                <span>Pterodactyl Panel</span>
-            </div>
-            <div class="sidebar-item cursor-pointer hover:bg-gray-700 p-2 rounded">
-                <span>Discord Server</span>
-            </div>
-            <div class="sidebar-item cursor-pointer hover:bg-gray-700 p-2 rounded">
-                <span>Status Page</span>
-            </div>
-        </div>
+        </nav>
     </div>
 
-    <!-- Content Area -->
-    <div class="content flex-1 bg-gradient-to-br from-[#0a1128] to-[#121b34] min-h-screen">
-        <div class="container mx-auto px-4 py-12">
-            <h1 class="text-4xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-white to-[#00ffab]">
+    <!-- Main Content -->
+    <main class="md:ml-64 flex-1 p-6 md:p-10 transition-all">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-4xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">
                 HostMC Dashboard
             </h1>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-[#121b34] p-6 rounded-lg">
-                    <h2 class="text-2xl font-semibold mb-4">Minecraft Servers</h2>
-                    <p class="text-[#00ffab]">0 Active Servers</p>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-slate-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                    <h2 class="text-xl font-semibold mb-4 flex items-center space-x-2">
+                        <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                        </svg>
+                        <span>Minecraft Servers</span>
+                    </h2>
+                    <div class="text-3xl font-bold text-emerald-400">0 Active</div>
                 </div>
-                
-                <div class="bg-[#121b34] p-6 rounded-lg">
-                    <h2 class="text-2xl font-semibold mb-4">Account Details</h2>
-                    <p id="usernameDisplay"></p>
+
+                <div class="bg-slate-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                    <h2 class="text-xl font-semibold mb-4 flex items-center space-x-2">
+                        <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        <span>Account Details</span>
+                    </h2>
+                    <div id="usernameDisplay" class="text-lg font-medium">Username</div>
                 </div>
-                
-                <div class="bg-[#121b34] p-6 rounded-lg">
-                    <h2 class="text-2xl font-semibold mb-4">Quick Actions</h2>
-                    <button onclick="logout()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
-                        Logout
+
+                <div class="bg-slate-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                    <h2 class="text-xl font-semibold mb-4 flex items-center space-x-2">
+                        <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span>Support Center</span>
+                    </h2>
+                    <button 
+                        onclick="openSupportTicket()" 
+                        class="w-full mt-2 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors flex items-center justify-center space-x-2"
+                    >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span>Open Support Ticket</span>
                     </button>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
+
+    <script>
+        function openSupportTicket() {
+            // Placeholder for support ticket logic
+            alert('Support ticket system coming soon!');
+        }
+    </script>
 </body>
 </html>
