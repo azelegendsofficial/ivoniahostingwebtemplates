@@ -1,608 +1,212 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Minecraft Hosting Gratis dengan performa tinggi dan dukungan 24/7">
-    <title>Ivonia Hosting</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>HostMC - Free Minecraft Hosting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide-icons"></script>
     <style>
         :root {
-            --primary: #2ecc71;
-            --primary-dark: #27ae60;
-            --secondary: #3498db;
-            --dark: #1a2530;
-            --light: #f8f9fa;
-            --gray: #95a5a6;
-            --shadow: 0 5px 20px rgba(0,0,0,0.1);
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --color-bg-dark: #0a1128;
+            --color-bg-medium: #121b34;
+            --color-accent: #00ffab;
+            --color-text-light: #e6e6e6;
+            --color-text-muted: #8b8b8b;
         }
-        
+
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
         }
-        
+
         body {
-            background-color: var(--light);
-            color: var(--dark);
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--color-bg-dark), var(--color-bg-medium));
+            color: var(--color-text-light);
             line-height: 1.6;
-            overflow-x: hidden;
         }
-        
-        header {
-            background-image: linear-gradient(135deg, rgba(17, 51, 83, 0.9) 0%, rgba(41, 128, 185, 0.8) 100%), url('/api/placeholder/1920/600');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white;
-            text-align: center;
-            padding: 180px 20px;
-            position: relative;
+
+        .glass-card {
+            background: rgba(18, 27, 52, 0.6);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            transition: all 0.3s ease;
         }
-        
-        header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: linear-gradient(to top right, var(--light) 49%, transparent 51%);
-        }
-        
-        header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            animation: fadeInDown 1s ease;
-        }
-        
-        header p {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto 50px;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease 0.3s forwards;
-            opacity: 0;
-        }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: white;
-            padding: 16px 36px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.2rem;
-            transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            animation: fadeInUp 1s ease 0.6s forwards;
-            opacity: 0;
-        }
-        
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 100%;
-            background-color: var(--primary-dark);
-            transition: var(--transition);
-            z-index: -1;
-            border-radius: 50px;
-        }
-        
-        .btn:hover {
-            box-shadow: 0 7px 20px rgba(46, 204, 113, 0.6);
-            transform: translateY(-3px);
-        }
-        
-        .btn:hover::before {
-            width: 100%;
-        }
-        
-        section {
-            padding: 100px 20px;
-            position: relative;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 70px;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--dark);
-            position: relative;
-            padding-bottom: 20px;
-            display: inline-block;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 70px;
-            height: 4px;
-            background-color: var(--primary);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-            gap: 30px;
-        }
-        
-        .feature-box {
-            background-color: white;
-            padding: 40px 30px;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            text-align: center;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .feature-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 0;
-            background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, rgba(52, 152, 219, 0.1) 100%);
-            transition: var(--transition);
-            z-index: -1;
-        }
-        
-        .feature-box:hover {
+
+        .glass-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
-        
-        .feature-box:hover::before {
-            height: 100%;
-        }
-        
-        .feature-box i {
-            font-size: 3.5rem;
-            margin-bottom: 25px;
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .feature-box h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-        
-        .performance {
-            background-color: var(--dark);
-            color: white;
+
+        .gradient-border {
             position: relative;
+            overflow: hidden;
         }
-        
-        .performance::before,
-        .performance::after {
+
+        .gradient-border::before {
             content: '';
             position: absolute;
-            width: 100%;
-            height: 100px;
-            left: 0;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                transparent,
+                transparent,
+                transparent,
+                var(--color-accent)
+            );
+            animation: rotate 4s linear infinite;
         }
-        
-        .performance::before {
+
+        .gradient-border::after {
+            content: '';
+            position: absolute;
+            inset: 4px;
+            background: var(--color-bg-medium);
+            border-radius: 12px;
+        }
+
+        .gradient-border > * {
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hero-bg {
+            position: absolute;
             top: 0;
-            background: linear-gradient(to bottom left, var(--light) 49%, transparent 51%);
-        }
-        
-        .performance::after {
-            bottom: 0;
-            background: linear-gradient(to top right, var(--light) 49%, transparent 51%);
-        }
-        
-        .performance .section-title h2 {
-            color: white;
-        }
-        
-        .perf-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .stat-box {
-            padding: 30px 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            transition: var(--transition);
-        }
-        
-        .stat-box:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .stat-box .number {
-            font-size: 3.5rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1.2;
-            margin-bottom: 15px;
-        }
-        
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 30px;
-            margin-top: 70px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .testimonial-box {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 40px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            position: relative;
-            transition: var(--transition);
-        }
-        
-        .testimonial-box::before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 5rem;
-            font-family: Georgia, serif;
-            color: rgba(255, 255, 255, 0.1);
-            line-height: 1;
-        }
-        
-        .testimonial-box:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .testimonial-author {
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-        }
-        
-        .testimonial-author::before {
-            content: '';
-            display: inline-block;
-            width: 30px;
-            height: 2px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            margin-right: 10px;
-        }
-        
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 80px 20px 30px;
-            position: relative;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-        
-        .footer-section h3 {
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 15px;
-            display: inline-block;
-        }
-        
-        .footer-section h3::after {
-            content: '';
-            position: absolute;
-            width: 40px;
-            height: 3px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            bottom: 0;
             left: 0;
-            border-radius: 2px;
-        }
-        
-        .footer-links a {
-            display: block;
-            color: var(--gray);
-            margin-bottom: 12px;
-            text-decoration: none;
-            transition: var(--transition);
-            position: relative;
-            padding-left: 15px;
-        }
-        
-        .footer-links a::before {
-            content: '›';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            transition: var(--transition);
-        }
-        
-        .footer-links a:hover {
-            color: var(--primary);
-            transform: translateX(5px);
-        }
-        
-        .footer-links a:hover::before {
-            transform: translateX(3px);
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            color: var(--gray);
-        }
-        
-        .contact-item i {
-            margin-right: 10px;
-            color: var(--primary);
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 30px;
-            margin-top: 50px;
-            text-align: center;
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive design improvements */
-        @media screen and (max-width: 991px) {
-            header h1 {
-                font-size: 2.8rem;
-            }
-            
-            header p {
-                font-size: 1.1rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2.2rem;
-            }
-        }
-        
-        @media screen and (max-width: 768px) {
-            header {
-                padding: 120px 20px;
-            }
-            
-            header h1 {
-                font-size: 2.3rem;
-            }
-            
-            section {
-                padding: 70px 20px;
-            }
-            
-            .testimonials {
-                grid-template-columns: 1fr;
-            }
-            
-            .stat-box .number {
-                font-size: 2.8rem;
-            }
-        }
-        
-        @media screen and (max-width: 480px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            
-            .btn {
-                padding: 14px 28px;
-                font-size: 1rem;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: 
+                radial-gradient(rgba(0, 255, 171, 0.1) 1px, transparent 1px),
+                radial-gradient(rgba(0, 255, 171, 0.1) 1px, transparent 1px);
+            background-position: 0 0, 25px 25px;
+            background-size: 50px 50px;
+            z-index: -1;
         }
     </style>
 </head>
-<body>
-    <!-- Header Section -->
-    <header>
-        <h1>Minecraft Hosting Gratis</h1>
-        <p>Mulai server Minecraft Anda sendiri tanpa biaya! Kami menyediakan layanan hosting server Minecraft gratis dengan performa tinggi dan dukungan 24/7.</p>
-        <a href="#" class="btn">Mulai Sekarang</a>
-    </header>
-    
-    <!-- About Hosting Section -->
-    <section id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>Tentang Hosting Kami</h2>
+<body class="min-h-screen relative">
+    <div class="hero-bg"></div>
+    <div class="container max-w-6xl mx-auto px-4 relative z-10">
+        <!-- Navigation -->
+        <nav class="flex justify-between items-center py-6">
+            <div class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-[var(--color-accent)]">
+                HostMC
             </div>
-            <div class="features">
-                <div class="feature-box">
-                    <i>🚀</i>
-                    <h3>Cepat & Mudah</h3>
-                    <p>Server Anda siap dalam hitungan menit. Tidak perlu pengetahuan teknis untuk memulai!</p>
-                </div>
-                <div class="feature-box">
-                    <i>🎮</i>
-                    <h3>Semua Versi Minecraft</h3>
-                    <p>Mendukung semua versi Minecraft - dari Vanilla hingga Forge, Spigot, dan lainnya.</p>
-                </div>
-                <div class="feature-box">
-                    <i>💯</i>
-                    <h3>100% Gratis</h3>
-                    <p>Tidak ada biaya tersembunyi atau pembayaran yang diperlukan. Layanan kami benar-benar gratis!</p>
-                </div>
-                <div class="feature-box">
-                    <i>🔒</i>
-                    <h3>Keamanan Premium</h3>
-                    <p>Perlindungan DDoS dan backup otomatis untuk menjaga server Anda tetap aman.</p>
-                </div>
-                <div class="feature-box">
-                    <i>⚙️</i>
-                    <h3>Panel Kontrol Intuitif</h3>
-                    <p>Mengelola server Anda dengan mudah melalui panel kontrol yang ramah pengguna.</p>
-                </div>
-                <div class="feature-box">
-                    <i>👨‍💻</i>
-                    <h3>Dukungan 24/7</h3>
-                    <p>Tim dukungan kami siap membantu Anda kapan saja Anda membutuhkannya.</p>
-                </div>
+            <div class="flex items-center space-x-6">
+                <a href="#" class="text-[var(--color-text-muted)] hover:text-white transition">Home</a>
+                <a href="#features" class="text-[var(--color-text-muted)] hover:text-white transition">Features</a>
+                <a href="#contact" class="text-white bg-[var(--color-accent)]/10 px-4 py-2 rounded-full hover:bg-[var(--color-accent)]/20 transition">
+                    Contact
+                </a>
             </div>
-        </div>
-    </section>
-    
-    <!-- Performance Section -->
-    <section id="performance" class="performance">
-        <div class="container">
-            <div class="section-title">
-                <h2>Performa Hosting</h2>
+        </nav>
+
+        <!-- Hero Section -->
+        <header class="text-center py-24 relative">
+            <h1 class="text-6xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-[var(--color-accent)] leading-tight">
+                Free Minecraft Hosting
+            </h1>
+            <p class="text-xl mb-12 text-[var(--color-text-muted)] max-w-2xl mx-auto">
+                High-performance servers with zero hidden costs. Experience seamless Minecraft hosting.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="inline-block bg-[var(--color-accent)] text-black px-8 py-3 rounded-full hover:scale-105 transition font-bold">
+                    Get Started
+                </a>
+                <a href="#features" class="inline-block border border-[var(--color-text-muted)] text-white px-8 py-3 rounded-full hover:bg-white/10 transition">
+                    Learn More
+                </a>
             </div>
-            <div class="perf-stats">
-                <div class="stat-box">
-                    <div class="number">99.9%</div>
-                    <p>Uptime</p>
+        </header>
+
+        <!-- Features -->
+        <section id="features" class="py-24">
+            <h2 class="text-4xl font-black text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-white to-[var(--color-accent)]">
+                Why Choose HostMC?
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card gradient-border p-8 text-center">
+                    <div class="text-5xl mb-6 text-[var(--color-accent)] flex justify-center">
+                        <i data-lucide="rocket" class="w-16 h-16"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">High Performance</h3>
+                    <p class="text-[var(--color-text-muted)]">
+                        Enterprise-grade servers ensuring lag-free Minecraft experience.
+                    </p>
                 </div>
-                <div class="stat-box">
-                    <div class="number">4GB</div>
-                    <p>RAM Gratis</p>
+                <div class="glass-card gradient-border p-8 text-center">
+                    <div class="text-5xl mb-6 text-[var(--color-accent)] flex justify-center">
+                        <i data-lucide="dollar-sign" class="w-16 h-16"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Completely Free</h3>
+                    <p class="text-[var(--color-text-muted)]">
+                        No hidden fees. Enjoy unlimited Minecraft server hosting.
+                    </p>
                 </div>
-                <div class="stat-box">
-                    <div class="number">10GB</div>
-                    <p>Penyimpanan SSD</p>
-                </div>
-                <div class="stat-box">
-                    <div class="number">24/7</div>
-                    <p>Dukungan Teknis</p>
+                <div class="glass-card gradient-border p-8 text-center">
+                    <div class="text-5xl mb-6 text-[var(--color-accent)] flex justify-center">
+                        <i data-lucide="settings" class="w-16 h-16"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Easy Setup</h3>
+                    <p class="text-[var(--color-text-muted)]">
+                        Intuitive interface for quick and hassle-free server creation.
+                    </p>
                 </div>
             </div>
-            
-            <div class="testimonials">
-                <div class="testimonial-box">
-                    <p class="testimonial-text">"Saya tidak percaya hosting ini benar-benar gratis. Server saya berjalan dengan sangat lancar dan saya bisa bermain dengan teman-teman tanpa masalah!"</p>
-                    <p class="testimonial-author">- Agus, Server Owner</p>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact" class="py-16 border-t border-white/10">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div>
+                    <h4 class="text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-[var(--color-accent)]">
+                        HostMC
+                    </h4>
+                    <p class="text-[var(--color-text-muted)]">
+                        Your ultimate platform for free, high-performance Minecraft server hosting.
+                    </p>
                 </div>
-                <div class="testimonial-box">
-                    <p class="testimonial-text">"Panel kontrolnya sangat mudah digunakan. Saya bisa menginstall plugins dan mengatur server saya dalam hitungan menit."</p>
-                    <p class="testimonial-author">- Budi, Minecraft Enthusiast</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Footer Section -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>MineCraft Hosting Gratis</h3>
-                    <p>Kami berdedikasi untuk menyediakan layanan hosting Minecraft gratis berkualitas tinggi untuk semua pemain.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Tautan Cepat</h3>
-                    <div class="footer-links">
-                        <a href="#">Beranda</a>
-                        <a href="#about">Tentang Hosting</a>
-                        <a href="#performance">Performa</a>
-                        <a href="#">FAQ</a>
-                        <a href="#">Kontak</a>
+                <div>
+                    <h4 class="text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-[var(--color-accent)]">
+                        Quick Links
+                    </h4>
+                    <div class="space-y-3">
+                        <a href="#" class="block text-[var(--color-text-muted)] hover:text-white transition">Home</a>
+                        <a href="#features" class="block text-[var(--color-text-muted)] hover:text-white transition">Features</a>
+                        <a href="#" class="block text-[var(--color-text-muted)] hover:text-white transition">Help</a>
                     </div>
                 </div>
-                <div class="footer-section">
-                    <h3>Hubungi Kami</h3>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i>📧</i>
-                            <p>Email: support@minecrafthosting.com</p>
-                        </div>
-                        <div class="contact-item">
-                            <i>💬</i>
-                            <p>Discord: discord.gg/minecrafthosting</p>
-                        </div>
-                    </div>
+                <div>
+                    <h4 class="text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-[var(--color-accent)]">
+                        Contact
+                    </h4>
+                    <p class="text-[var(--color-text-muted)] mb-2">support@hostmc.com</p>
+                    <p class="text-[var(--color-text-muted)]">+62 123 4567 890</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Minecraft Hosting Gratis. Semua Hak Dilindungi.</p>
+            <div class="text-center mt-12 text-[var(--color-text-muted)]">
+                © 2024 HostMC. All Rights Reserved.
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
